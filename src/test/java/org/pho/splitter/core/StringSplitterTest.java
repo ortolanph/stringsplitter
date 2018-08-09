@@ -1,0 +1,66 @@
+package org.pho.splitter.core;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.pho.splitter.beans.Split;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class StringSplitterTest {
+
+    private static final String DATA = "1STRING SPLITTER     JAVA8     POM       JAR       1.0.0   ";
+
+    private StringSplitter splitter;
+
+    @BeforeEach
+    public void setUp() {
+        splitter = new StringSplitter();
+    }
+
+    @AfterEach
+    public void tearDown() {
+        splitter = null;
+    }
+
+    @Test
+    public void addSplitterTest() {
+        Split expectedSplit1 = Split.newSplit(1, 1);
+        Split expectedSplit2 = Split.newSplit(2);
+
+        splitter.addSplit(expectedSplit1);
+        splitter.addSplit(expectedSplit2);
+
+        List<Split> actualSplits = splitter.getSplitters();
+
+        assertTrue(actualSplits.containsAll(Arrays.asList(expectedSplit1, expectedSplit2)));
+    }
+
+    @Test
+    public void splitTest() {
+        List<String> expected =
+            new ArrayList<>(Arrays.asList(
+                "1",
+                "STRING SPLITTER     ",
+                "JAVA8     ",
+                "POM       ",
+                "JAR       ",
+                "1.0.0   "
+            ));
+
+        splitter.addSplit(Split.newSplit(0, 1));
+        splitter.addSplit(Split.newSplit(1, 21));
+        splitter.addSplit(Split.newSplit(21, 31));
+        splitter.addSplit(Split.newSplit(31, 41));
+        splitter.addSplit(Split.newSplit(41, 51));
+        splitter.addSplit(Split.newSplit(51));
+
+        List<String> actual = splitter.split(DATA);
+
+        assertEquals(expected, actual);
+    }
+}
