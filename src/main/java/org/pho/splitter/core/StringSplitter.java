@@ -25,13 +25,7 @@ public class StringSplitter {
     public List<String> split(String source) {
         return splitters
             .stream()
-            .map(s -> {
-                if (s.hasEnd()) {
-                    return source.substring(s.getStart(), s.getEnd());
-                } else {
-                    return source.substring(s.getStart());
-                }
-            })
+            .map(s -> s.split(source))
             .collect(Collectors.toList());
     }
 

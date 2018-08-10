@@ -1,8 +1,10 @@
 package org.pho.splitter.beans;
 
+import org.pho.splitter.function.SplitFunction;
+
 import java.util.Objects;
 
-public class Split {
+public class Split implements SplitFunction<String> {
 
     private static final int END_OF_LINE = 0;
 
@@ -47,5 +49,13 @@ public class Split {
 
     @Override public int hashCode() {
         return Objects.hash(start, end);
+    }
+
+    @Override public String split(String source) {
+        if (hasEnd()) {
+            return source.substring(start, end);
+        } else {
+            return source.substring(start);
+        }
     }
 }
