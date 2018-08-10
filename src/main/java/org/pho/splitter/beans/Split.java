@@ -10,6 +10,8 @@ public class Split {
 
     private int end;
 
+    private boolean trimmed;
+
     private Split(int start, int end) {
         this.start = start;
         this.end = end;
