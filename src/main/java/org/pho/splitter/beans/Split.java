@@ -7,6 +7,7 @@ public class Split {
     private static final int END_OF_LINE = 0;
 
     private int start;
+
     private int end;
 
     private Split(int start, int end) {

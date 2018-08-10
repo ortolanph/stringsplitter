@@ -2,6 +2,7 @@ package org.pho.splitter.core;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.pho.splitter.beans.Split;
 
@@ -9,25 +10,29 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class StringSplitterTest {
+@DisplayName("StringSplitter test") class StringSplitterTest {
 
     private static final String DATA = "1STRING SPLITTER     JAVA8     POM       JAR       1.0.0   ";
 
     private StringSplitter splitter;
 
     @BeforeEach
+    @DisplayName("Instantiating a splitter")
     public void setUp() {
         splitter = new StringSplitter();
     }
 
     @AfterEach
+    @DisplayName("Recycling a splitter")
     public void tearDown() {
         splitter = null;
     }
 
     @Test
+    @DisplayName("Testing split adding")
     public void addSplitterTest() {
         Split expectedSplit1 = Split.newSplit(1, 1);
         Split expectedSplit2 = Split.newSplit(2);
@@ -41,6 +46,7 @@ class StringSplitterTest {
     }
 
     @Test
+    @DisplayName("Testing the split method")
     public void splitTest() {
         List<String> expected =
             new ArrayList<>(Arrays.asList(

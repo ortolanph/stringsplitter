@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class StringSplitter {
+
     private List<Split> splitters;
 
     public StringSplitter() {
@@ -25,7 +26,7 @@ public class StringSplitter {
         return splitters
             .stream()
             .map(s -> {
-                if(s.hasEnd()) {
+                if (s.hasEnd()) {
                     return source.substring(s.getStart(), s.getEnd());
                 } else {
                     return source.substring(s.getStart());
