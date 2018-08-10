@@ -1,6 +1,6 @@
 # String Splitter
 
-A String splitter util for Java.
+A String splitter util for Java. [![Build Status](https://travis-ci.org/ortolanph/stringsplitter.svg?branch=master)](https://travis-ci.org/ortolanph/stringsplitter)
 
 ## Requirements
 
