@@ -8,6 +8,23 @@
     <artifactId>string-splitter</artifactId>
     <version>1.0</version>
 
+    <developers>
+        <developer>
+            <id>ortolanph</id>
+            <name>Paulo Henrique Ortolan</name>
+            <email>paulo.ortolan@gmail.com</email>
+            <timezone>-3</timezone>
+            <roles>
+                <role>
+                    Architect
+                </role>
+                <role>
+                    Developer
+                </role>
+            </roles>
+        </developer>
+    </developers>
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
