@@ -4,4 +4,5 @@ package org.pho.splitter.function;
 public interface SplitFunction<R> {
 
     R split(String source);
+
 }

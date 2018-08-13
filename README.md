@@ -23,7 +23,7 @@ splitter.addSplit(Split.newSplit(31, 41));
 splitter.addSplit(Split.newSplit(41, 51));
 splitter.addSplit(Split.newSplit(51));
 
-List<String> result = splitter.split(DATA);
+List<String> result = splitter.stringSplit(DATA);
 
 result.stream().foreach(System.out::println);
 
@@ -42,7 +42,7 @@ result.stream().foreach(System.out::println);
         .addSplit(41, 51)
         .addSplit(51)
         .build()
-        .split(DATA)
+        .stringSplit(DATA)
         .stream()
         .forEach(System.out::println);
 

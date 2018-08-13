@@ -4,7 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.pho.splitter.beans.Split;
+import org.pho.splitter.beans.StringSplit;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,15 +34,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
     @Test
     @DisplayName("Testing split adding")
     public void addSplitterTest() {
-        Split expectedSplit1 = Split.newSplit(1, 1);
-        Split expectedSplit2 = Split.newSplit(2);
+        StringSplit expectedStringSplit1 = StringSplit.newSplit(1, 1);
+        StringSplit expectedStringSplit2 = StringSplit.newSplit(2);
 
-        splitter.addSplit(expectedSplit1);
-        splitter.addSplit(expectedSplit2);
+        splitter.addSplit(expectedStringSplit1);
+        splitter.addSplit(expectedStringSplit2);
 
-        List<Split> actualSplits = splitter.getSplitters();
+        List<StringSplit> actualStringSplits = splitter.getSplitters();
 
-        assertTrue(actualSplits.containsAll(Arrays.asList(expectedSplit1, expectedSplit2)));
+        assertTrue(actualStringSplits.containsAll(Arrays.asList(expectedStringSplit1, expectedStringSplit2)));
     }
 
     @Test
@@ -58,12 +58,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
                 "1.0.0   "
             ));
 
-        splitter.addSplit(Split.newSplit(0, 1));
-        splitter.addSplit(Split.newSplit(1, 21));
-        splitter.addSplit(Split.newSplit(21, 31));
-        splitter.addSplit(Split.newSplit(31, 41));
-        splitter.addSplit(Split.newSplit(41, 51));
-        splitter.addSplit(Split.newSplit(51));
+        splitter.addSplit(StringSplit.newSplit(0, 1));
+        splitter.addSplit(StringSplit.newSplit(1, 21));
+        splitter.addSplit(StringSplit.newSplit(21, 31));
+        splitter.addSplit(StringSplit.newSplit(31, 41));
+        splitter.addSplit(StringSplit.newSplit(41, 51));
+        splitter.addSplit(StringSplit.newSplit(51));
 
         List<String> actual = splitter.split(DATA);
 

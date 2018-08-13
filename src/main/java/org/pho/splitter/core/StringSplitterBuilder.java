@@ -1,6 +1,6 @@
 package org.pho.splitter.core;
 
-import org.pho.splitter.beans.Split;
+import org.pho.splitter.beans.StringSplit;
 
 public class StringSplitterBuilder {
 
@@ -17,12 +17,12 @@ public class StringSplitterBuilder {
     }
 
     public StringSplitterBuilder addSplit(int start, int end) {
-        splitter.addSplit(Split.newSplit(start, end));
+        splitter.addSplit(StringSplit.newSplit(start, end));
         return this;
     }
 
     public StringSplitterBuilder addSplit(int start) {
-        splitter.addSplit(Split.newSplit(start));
+        splitter.addSplit(StringSplit.newSplit(start));
         return this;
     }
 
