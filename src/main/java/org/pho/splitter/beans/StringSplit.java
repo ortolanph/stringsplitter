@@ -39,6 +39,18 @@ public class StringSplit implements SplitFunction<String> {
         return new StringSplit(start, end, WordCase.NO_CASE, false);
     }
 
+    public static StringSplit newSplit(int start, WordCase wordCase, boolean trimmed) {
+        return new StringSplit(start, END_OF_LINE, wordCase, trimmed);
+    }
+
+    public static StringSplit newSplit(int start, WordCase wordCase) {
+        return new StringSplit(start, END_OF_LINE, wordCase, false);
+    }
+
+    public static StringSplit newSplit(int start, boolean trimmed) {
+        return new StringSplit(start, END_OF_LINE, WordCase.NO_CASE, trimmed);
+    }
+
     public static StringSplit newSplit(int start) {
         return new StringSplit(start, END_OF_LINE, WordCase.NO_CASE, false);
     }
@@ -49,6 +61,14 @@ public class StringSplit implements SplitFunction<String> {
 
     public int getEnd() {
         return end;
+    }
+
+    public WordCase getWordCase() {
+        return wordCase;
+    }
+
+    public boolean isTrimmed() {
+        return trimmed;
     }
 
     public boolean hasEnd() {
