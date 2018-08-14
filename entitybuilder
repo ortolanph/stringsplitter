@@ -1,0 +1,5 @@
+EntityBuilder
+    .for(String clazz)
+    .for(Clazz<T> clazz)
+    .field(String name, Split split)
+    .buildEntity():T;
