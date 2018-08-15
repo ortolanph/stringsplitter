@@ -1,4 +1,4 @@
-package org.pho.splitter.core;
+package org.pho.splitter.core.splitters;
 
 import org.pho.splitter.beans.StringSplit;
 

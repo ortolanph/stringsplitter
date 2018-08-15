@@ -1,7 +1,8 @@
-package org.pho.splitter.core;
+package org.pho.splitter.core.builders;
 
 import org.pho.splitter.beans.StringSplit;
 import org.pho.splitter.beans.WordCase;
+import org.pho.splitter.core.splitters.StringSplitter;
 
 public class StringSplitterBuilder {
 

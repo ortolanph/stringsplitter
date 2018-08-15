@@ -2,7 +2,9 @@ EntitySplitBuilder
 
     .for(String clazz) (V2)
 
-    [.for(Class<T> clazz)] (V2)
+    .for(Class<T> clazz) (V2)
+
+    .stringField(String name, StringSplit split) (V2) [OK]
 
     .booleanField(String name, BooleanSplit split) (V2)
 
@@ -17,8 +19,6 @@ EntitySplitBuilder
     .floatField(String name, FloatSplit split) (V3)
 
     .doubleField(String name, DoubleSplit split) (V3)
-
-    .stringField(String name, StringSplit split) (V3)
 
     .dateField(String name, DateSplit split) (V4)
 
