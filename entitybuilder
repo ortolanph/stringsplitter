@@ -1,5 +1,27 @@
-EntityBuilder
-    .for(String clazz)
-    .for(Clazz<T> clazz)
-    .field(String name, Split split)
-    .buildEntity():T;
+EntitySplitBuilder
+
+    .for(String clazz) (V2)
+
+    [.for(Class<T> clazz)] (V2)
+
+    .booleanField(String name, BooleanSplit split) (V2)
+
+    .byteField(String name, ByteSplit split) (V2)
+
+    .charField(String name, CharacterSplit split) (V2)
+
+    .intField(String name, IntegerSplit split) (V2)
+
+    .longField(String name, IntegerSplit split) (V2)
+
+    .floatField(String name, FloatSplit split) (V3)
+
+    .doubleField(String name, DoubleSplit split) (V3)
+
+    .stringField(String name, StringSplit split) (V3)
+
+    .dateField(String name, DateSplit split) (V4)
+
+    .entityField(String name, EntitySplit split) (V4)
+
+    .buildEntity(): T; (V2)
