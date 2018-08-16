@@ -3,7 +3,7 @@ package org.pho.splitter.core;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.pho.splitter.beans.WordCase;
-import org.pho.splitter.core.builders.StringSplitterBuilder;
+import org.pho.splitter.core.builders.StringArraySplitterBuilder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("StringSplitterBuilder test") class StringSplitterBuilderTest {
+@DisplayName("StringArraySplitterBuilder test") class StringArraySplitterBuilderTest {
 
     private static final String DATA = "1STRING SPLITTER     JAVA8     POM       JAR       1.0.0   ";
 
@@ -29,7 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
             ));
 
         List<String> actual =
-            StringSplitterBuilder
+            StringArraySplitterBuilder
                 .newSplitter()
                 .addStringSplit(0, 1)
                 .addStringSplit(1, 21)
@@ -57,7 +57,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
             ));
 
         List<String> actual =
-            StringSplitterBuilder
+            StringArraySplitterBuilder
                 .newSplitter()
                 .addStringSplit(0, 1)
                 .addStringSplit(1, 21)
@@ -85,7 +85,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
             ));
 
         List<String> actual =
-            StringSplitterBuilder
+            StringArraySplitterBuilder
                 .newSplitter()
                 .addStringSplit(0, 1)
                 .addStringSplit(1, 21, true)
@@ -113,7 +113,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
             ));
 
         List<String> actual =
-            StringSplitterBuilder
+            StringArraySplitterBuilder
                 .newSplitter()
                 .addStringSplit(0, 1)
                 .addStringSplit(1, 21, true)

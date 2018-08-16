@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.pho.splitter.beans.StringSplit;
-import org.pho.splitter.core.splitters.StringSplitter;
+import org.pho.splitter.core.splitters.StringArraySplitter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,16 +14,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@DisplayName("StringSplitter test") class StringSplitterTest {
+@DisplayName("StringArraySplitter test") class StringArraySplitterTest {
 
     private static final String DATA = "1STRING SPLITTER     JAVA8     POM       JAR       1.0.0   ";
 
-    private StringSplitter splitter;
+    private StringArraySplitter splitter;
 
     @BeforeEach
     @DisplayName("Instantiating a splitter")
     public void setUp() {
-        splitter = new StringSplitter();
+        splitter = new StringArraySplitter();
     }
 
     @AfterEach
