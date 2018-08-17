@@ -6,13 +6,13 @@ public class EntitySplitterBuilder<T> {
 
     private static final EntitySplitterBuilder INSTANCE = new EntitySplitterBuilder();
 
-    private static EntitySplitter splitter;
+//    private static EntitySplitter splitter;
 
     private EntitySplitterBuilder() {
     }
 
     public static EntitySplitterBuilder newSplitter() {
-        splitter = new EntitySplitter();
+//        splitter = new EntitySplitter();
         return INSTANCE;
     }
 
