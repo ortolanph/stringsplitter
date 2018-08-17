@@ -1,4 +1,4 @@
-package org.pho.splitter.beans;
+package org.pho.splitter.core.splits;
 
 import java.util.function.Function;
 

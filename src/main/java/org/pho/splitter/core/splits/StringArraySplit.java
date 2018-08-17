@@ -1,16 +1,14 @@
-package org.pho.splitter.core.splitters;
-
-import org.pho.splitter.beans.StringSplit;
+package org.pho.splitter.core.splits;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StringArraySplitter {
+public class StringArraySplit {
 
     private List<StringSplit> splitters;
 
-    public StringArraySplitter() {
+    public StringArraySplit() {
         splitters = new ArrayList<>();
     }
 

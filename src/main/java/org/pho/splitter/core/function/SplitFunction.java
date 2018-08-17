@@ -1,4 +1,4 @@
-package org.pho.splitter.function;
+package org.pho.splitter.core.function;
 
 @FunctionalInterface
 public interface SplitFunction<R> {

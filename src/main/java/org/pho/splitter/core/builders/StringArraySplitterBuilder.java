@@ -1,19 +1,20 @@
 package org.pho.splitter.core.builders;
 
-import org.pho.splitter.beans.StringSplit;
-import org.pho.splitter.beans.WordCase;
-import org.pho.splitter.core.splitters.StringArraySplitter;
+import org.pho.splitter.core.splits.StringArraySplit;
+import org.pho.splitter.core.splits.StringSplit;
+import org.pho.splitter.core.splits.WordCase;
 
 public class StringArraySplitterBuilder {
 
     private static final StringArraySplitterBuilder INSTANCE = new StringArraySplitterBuilder();
 
-    private static StringArraySplitter splitter;
+    private static StringArraySplit splitter;
 
-    private StringArraySplitterBuilder() { }
+    private StringArraySplitterBuilder() {
+    }
 
     public static StringArraySplitterBuilder newSplitter() {
-        splitter = new StringArraySplitter();
+        splitter = new StringArraySplit();
         return INSTANCE;
     }
 
@@ -57,7 +58,7 @@ public class StringArraySplitterBuilder {
         return this;
     }
 
-    public StringArraySplitter build() {
+    public StringArraySplit build() {
         return splitter;
     }
 }

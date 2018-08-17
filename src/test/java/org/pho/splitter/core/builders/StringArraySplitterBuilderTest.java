@@ -1,9 +1,8 @@
-package org.pho.splitter.core;
+package org.pho.splitter.core.builders;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.pho.splitter.beans.WordCase;
-import org.pho.splitter.core.builders.StringArraySplitterBuilder;
+import org.pho.splitter.core.splits.WordCase;
 
 import java.util.ArrayList;
 import java.util.Arrays;

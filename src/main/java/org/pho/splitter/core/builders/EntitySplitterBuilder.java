@@ -1,6 +1,6 @@
 package org.pho.splitter.core.builders;
 
-import org.pho.splitter.core.splitters.*;
+import org.pho.splitter.core.splits.*;
 
 public class EntitySplitterBuilder<T> {
 
@@ -8,7 +8,8 @@ public class EntitySplitterBuilder<T> {
 
     private static EntitySplitter splitter;
 
-    private EntitySplitterBuilder() { }
+    private EntitySplitterBuilder() {
+    }
 
     public static EntitySplitterBuilder newSplitter() {
         splitter = new EntitySplitter();
@@ -23,27 +24,27 @@ public class EntitySplitterBuilder<T> {
         return this;
     }
 
-    public EntitySplitterBuilder stringField(String name, StringSplitter splitter) {
+    public EntitySplitterBuilder stringField(String name, StringSplit splitter) {
         return this;
     }
 
-    public EntitySplitterBuilder booleanField(String name, BooleanSplitter splitter) {
+    public EntitySplitterBuilder booleanField(String name, BooleanSplit splitter) {
         return this;
     }
 
-    public EntitySplitterBuilder byteField(String name, ByteSplitter split) {
+    public EntitySplitterBuilder byteField(String name, ByteSplit split) {
         return this;
     }
 
-    public EntitySplitterBuilder charField(String name, CharacterSplitter split) {
+    public EntitySplitterBuilder charField(String name, CharacterSplit split) {
         return this;
     }
 
-    public EntitySplitterBuilder intField(String name, IntegerSplitter split)  {
+    public EntitySplitterBuilder intField(String name, IntegerSplit split) {
         return this;
     }
 
-    public EntitySplitterBuilder longField(String name, LongSplitter split) {
+    public EntitySplitterBuilder longField(String name, LongSplit split) {
         return this;
     }
 

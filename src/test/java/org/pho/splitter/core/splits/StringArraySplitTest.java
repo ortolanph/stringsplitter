@@ -1,11 +1,9 @@
-package org.pho.splitter.core;
+package org.pho.splitter.core.splits;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.pho.splitter.beans.StringSplit;
-import org.pho.splitter.core.splitters.StringArraySplitter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,16 +12,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@DisplayName("StringArraySplitter test") class StringArraySplitterTest {
+@DisplayName("StringArraySplit test") class StringArraySplitTest {
 
     private static final String DATA = "1STRING SPLITTER     JAVA8     POM       JAR       1.0.0   ";
 
-    private StringArraySplitter splitter;
+    private StringArraySplit splitter;
 
     @BeforeEach
     @DisplayName("Instantiating a splitter")
     public void setUp() {
-        splitter = new StringArraySplitter();
+        splitter = new StringArraySplit();
     }
 
     @AfterEach

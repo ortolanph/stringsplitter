@@ -1,24 +1,14 @@
-package org.pho.splitter.beans;
+package org.pho.splitter.core.splits;
 
-import org.pho.splitter.function.SplitFunction;
-
-import java.util.Objects;
-
-public class StringSplit implements SplitFunction<String> {
-
-    private static final int END_OF_LINE = 0;
-
-    private int start;
-
-    private int end;
+public class StringSplit extends AbstractSplitter<String> {
 
     private WordCase wordCase;
 
     private boolean trimmed;
 
     private StringSplit(int start, int end, WordCase wordCase, boolean trimmed) {
-        this.start = start;
-        this.end = end;
+        setStart(start);
+        setEnd(end);
         this.wordCase = wordCase;
         this.trimmed = trimmed;
     }
@@ -55,43 +45,9 @@ public class StringSplit implements SplitFunction<String> {
         return new StringSplit(start, END_OF_LINE, WordCase.NO_CASE, false);
     }
 
-    public int getStart() {
-        return start;
-    }
-
-    public int getEnd() {
-        return end;
-    }
-
-    public WordCase getWordCase() {
-        return wordCase;
-    }
-
-    public boolean isTrimmed() {
-        return trimmed;
-    }
-
-    public boolean hasEnd() {
-        return end != END_OF_LINE;
-    }
-
-    @Override public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-        StringSplit stringSplit = (StringSplit) o;
-        return start == stringSplit.start &&
-            end == stringSplit.end;
-    }
-
-    @Override public int hashCode() {
-        return Objects.hash(start, end);
-    }
-
     @Override public String split(String source) {
-        String result = (hasEnd())? source.substring(start, end) : source.substring(start);
-        result = (trimmed)? result.trim() : result;
+        String result = (hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart());
+        result = (trimmed) ? result.trim() : result;
         return wordCase.apply(result);
     }
 }

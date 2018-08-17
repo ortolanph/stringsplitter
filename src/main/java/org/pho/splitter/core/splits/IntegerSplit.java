@@ -1,6 +1,6 @@
-package org.pho.splitter.beans;
+package org.pho.splitter.core.splits;
 
-import org.pho.splitter.function.SplitFunction;
+import org.pho.splitter.core.function.SplitFunction;
 
 public class IntegerSplit implements SplitFunction<Integer> {
 
