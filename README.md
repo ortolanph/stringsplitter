@@ -49,3 +49,6 @@ result.stream().foreach(System.out::println);
         .forEach(System.out::println);
 
 ```
+
+
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html

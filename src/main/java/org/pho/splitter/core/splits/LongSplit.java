@@ -1,8 +1,6 @@
 package org.pho.splitter.core.splits;
 
-import org.pho.splitter.core.function.SplitFunction;
-
-public class LongSplit implements SplitFunction<Long> {
+public class LongSplit extends AbstractSplitter<Long> {
 
     @Override public Long split(String source) {
         return null;

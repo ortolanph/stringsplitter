@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StringArraySplit {
+public class StringArraySplit extends AbstractSplitter<List<String>> {
 
     private List<StringSplit> splitters;
 
