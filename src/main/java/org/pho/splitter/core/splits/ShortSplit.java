@@ -4,16 +4,18 @@ import org.pho.splitter.core.exception.SplitterException;
 
 public class ShortSplit extends AbstractSplitter<Short> {
 
-    private String format;
+    private String[] specialCharacters;
+
+    private static final String NOTHING = "";
 
     private ShortSplit(int start, int end) {
         setStart(start);
         setEnd(end);
     }
 
-    private ShortSplit(int start, int end, String format) {
+    private ShortSplit(int start, int end, String[] specialCharacters) {
         this(start, end);
-        this.format = format;
+        this.specialCharacters = specialCharacters;
     }
 
     public static ShortSplit newShortSplit(int start, int end) {
@@ -24,21 +26,34 @@ public class ShortSplit extends AbstractSplitter<Short> {
         return new ShortSplit(start, END_OF_LINE);
     }
 
-    public static ShortSplit newShortSplit(int start, int end, String format) {
-        return new ShortSplit(start, end, format);
+    public static ShortSplit newShortSplit(int start, int end, String... specialCharacters) {
+        return new ShortSplit(start, end, specialCharacters);
     }
 
-    public static ShortSplit newShortSplit(int start, String format) {
-        return new ShortSplit(start, END_OF_LINE, format);
+    public static ShortSplit newShortSplit(int start, String... specialCharacters) {
+        return new ShortSplit(start, END_OF_LINE, specialCharacters);
     }
 
     @Override public Short split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
+        result = removeSpecialCharacters(result);
 
         try {
             return Short.valueOf(result.trim());
         } catch (Exception e) {
             throw new SplitterException(e.getMessage(), e);
         }
+    }
+
+    private String removeSpecialCharacters(String source) {
+        String result = source;
+
+        if(specialCharacters != null) {
+            for (String specialCharacter : specialCharacters) {
+                result = result.replaceAll(specialCharacter, NOTHING);
+            }
+        }
+
+        return result;
     }
 }

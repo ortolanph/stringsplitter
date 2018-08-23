@@ -30,7 +30,7 @@ class ByteSplitTest {
     }
 
     @Test
-    @DisplayName("Byte split test max byte")
+    @DisplayName("Byte split test max")
     public void maximumByteNumber() throws SplitterException {
         byte actual = ByteSplit.newByteSplit(8, 12).split(DATA);
         byte expected = Byte.MAX_VALUE;
@@ -38,7 +38,7 @@ class ByteSplitTest {
     }
 
     @Test
-    @DisplayName("Byte split test min byte")
+    @DisplayName("Byte split test min")
     public void minimumByteNumber() throws SplitterException {
         byte actual = ByteSplit.newByteSplit(12, 16).split(DATA);
         byte expected = Byte.MIN_VALUE;

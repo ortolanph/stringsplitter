@@ -1,11 +1,11 @@
 package org.pho.splitter.core.splits;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.pho.splitter.core.exception.SplitterException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ShortSplitTest {
 
@@ -32,7 +32,7 @@ class ShortSplitTest {
     }
 
     @Test
-    @DisplayName("Short split test max byte")
+    @DisplayName("Short split test max")
     public void maximumShortNumber() throws SplitterException {
         short actual = ShortSplit.newShortSplit(12, 18).split(DATA);
         short expected = Short.MAX_VALUE;
@@ -40,7 +40,7 @@ class ShortSplitTest {
     }
 
     @Test
-    @DisplayName("Short split test min byte")
+    @DisplayName("Short split test min")
     public void minimumShortNumber() throws SplitterException {
         short actual = ShortSplit.newShortSplit(18, 24).split(DATA);
         short expected = Short.MIN_VALUE;
@@ -69,20 +69,18 @@ class ShortSplitTest {
 
     @Test
     @DisplayName("Formatted positive Short split test")
-    @Disabled
-    public void formattedPositiveShort() {
-        //        byte actual = ByteSplit.newByteSplit(0, 4).split(DATA);
-        //        byte expected = 65;
-        //        assertEquals(expected, actual);
+    public void formattedPositiveShort() throws SplitterException {
+        short actual = ShortSplit.newShortSplit(0, 7, ",").split(FORMATTED_DATA);
+        short expected = 23500;
+        assertEquals(expected, actual);
     }
 
     @Test
     @DisplayName("Formatted negative Short split test")
-    @Disabled
-    public void formattedNegativeShort() {
-        //        byte actual = ByteSplit.newByteSplit(4).split(NO_LIMIT_DATA);
-        //        byte expected = -65;
-        //        assertEquals(expected, actual);
+    public void formattedNegativeShort() throws SplitterException {
+        short actual = ShortSplit.newShortSplit(7, ",").split(FORMATTED_DATA);
+        short expected = -23500;
+        assertEquals(expected, actual);
     }
 
 }

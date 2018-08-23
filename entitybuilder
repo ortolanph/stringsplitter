@@ -6,15 +6,21 @@ EntitySplitBuilder
 
     .stringField(String name, StringSplit split) (V2) [OK]
 
-    .booleanField(String name, BooleanSplit split) (V2)
+    .stringArrayField(String name, StringArraySplit split) (V2) [OK]
 
-    .byteField(String name, ByteSplit split) (V2)
+    .booleanField(String name, BooleanSplit split) (V2) [OK]
 
-    .charField(String name, CharacterSplit split) (V2)
+    .byteField(String name, ByteSplit split) (V2) [OK]
+
+    .shortField(String name, ShortSplit split) (V2) [OK]
+
+    .charField(String name, CharacterSplit split) (V2) [OK]
 
     .intField(String name, IntegerSplit split) (V2)
 
     .longField(String name, IntegerSplit split) (V2)
+
+    .fields(FieldSplit... splits) (V2)
 
     .floatField(String name, FloatSplit split) (V3)
 
