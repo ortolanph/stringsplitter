@@ -95,7 +95,15 @@ List<String> result =
 
 ## Next versions
 
-In the
+The following table shows the plans to evolve the framework:
+
+| Release | Feature | Status |
+|:-------:| ------- |:------:|
+| 1 | Framework architecture | Implemented |
+| 2 | StringSplit, StringArraySplit, CharacterSplit, ByteSplit, ShortSplit, IntegerSplit, LongSplit | Implemented |
+| 3 | EntityBuilder, FieldSplit | To Be Implemented |
+| 4 | FloatSplit, DoubleSplit, EntityBuilder update | To Be Implemented |
+| 5 | DateSplit, EntityBuilder update | To Be Implemented |
 
 ## Java DataTypes
 
