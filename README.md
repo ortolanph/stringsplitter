@@ -1,8 +1,11 @@
 # String Splitter
 
-A String splitter util for Java. [![Build Status](https://travis-ci.org/ortolanph/stringsplitter.svg?branch=master)](https://travis-ci.org/ortolanph/stringsplitter) [![Coverage Status](https://coveralls.io/repos/github/ortolanph/stringsplitter/badge.svg?branch=master)](https://coveralls.io/github/ortolanph/stringsplitter?branch=master)
+A String splitter util for Java.
 
-**DOCUMENTATION OUTDATED**
+|  Feature   | Status |
+|:----------:|:------:|
+| Unit Tests | [![Build Status](https://travis-ci.org/ortolanph/stringsplitter.svg?branch=master)](https://travis-ci.org/ortolanph/stringsplitter) |
+| Coverage   | [![Coverage Status](https://coveralls.io/repos/github/ortolanph/stringsplitter/badge.svg?branch=master)](https://coveralls.io/github/ortolanph/stringsplitter?branch=master) |
 
 ## Requirements
 
@@ -10,45 +13,90 @@ Java 8 or later.
 
 ## How to use
 
-`StringSplitter` class:
+### Splitting Strings
 
 ```java
 
-String DATA = "1STRING SPLITTER     JAVA8     POM       JAR       1.0.0   ";
+String data = "Collect THIS text";
 
-StringSplitter splitter = new StringSplitter();
+// Only the text
+String result = StringSplit
+    .newStringSplit(7, 11)
+    .split(data);
 
-splitter.addSplit(Split.newSplit(0, 1));
-splitter.addSplit(Split.newSplit(21, 31));
-splitter.addSplit(Split.newSplit(1, 21));
-splitter.addSplit(Split.newSplit(31, 41));
-splitter.addSplit(Split.newSplit(41, 51));
-splitter.addSplit(Split.newSplit(51));
+// Lower Case
+String resultUpperCase = StringSplit
+    .newStringSplit(7, 11, WordCase.LOWER_CASE)
+    .split(data);
 
-List<String> result = splitter.stringSplit(DATA);
+// Trimmed
+String resultUpperCase = StringSplit
+    .newStringSplit(7, 12, true)
+    .split(data);
 
-result.stream().foreach(System.out::println);
+// Lower Case and Trimmed
+String resultUpperCase = StringSplit
+    .newStringSplit(7, 12, WordCase.LOWER_CASE, true)
+    .split(data);
 
 ```
 
-`StringSplitterBuilder` class:
+### Splitting String Arrays
 
 ```java
+String data = "STRINGSPLITTER";
 
-    StringSplitterBuilder
+StringArraySplit StringArraySplit = new StringArraySplit();
+
+StringArraySplit splitter = new StringArraySplit();
+
+StringSplit stringSplit1 = StringSplit.newSplit(0, 6);
+StringSplit stringSplit2 = StringSplit.newSplit(6);
+
+splitter.addSplit(stringSplit1);
+splitter.addSplit(stringSplit2);
+
+List<String> result = splitter.split(data);
+```
+
+Or using a builder:
+
+```java
+String data = "STRINGSPLITTER";
+
+List<String> result =
+    StringArraySplitterBuilder
         .newSplitter()
-        .addSplit(0, 1)
-        .addSplit(1, 21)
-        .addSplit(21, 31)
-        .addSplit(31, 41)
-        .addSplit(41, 51)
-        .addSplit(51)
+        .addStringSplit(0, 6)
+        .addStringSplit(6)
         .build()
-        .stringSplit(DATA)
-        .stream()
-        .forEach(System.out::println);
-
+        .split(data);
 ```
 
+### Splitting Characters
+
+`TBD`
+
+### Splitting Bytes
+
+`TBD`
+
+### Splitting Shorts
+
+`TBD`
+
+### Splitting Integers
+
+`TBD`
+
+### Splitting Longs
+
+`TBD`
+
+## Next versions
+
+In the
+
+## Java DataTypes
 
 https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html

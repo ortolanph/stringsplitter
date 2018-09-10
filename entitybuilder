@@ -4,13 +4,15 @@ BooleanSplit  (V2) [OK]
 ByteSplit (V2) [OK]
 CharacterSplit (V2) [OK]
 IntegerSplit (V2) [OK]
-LongSplit (V2)
-FieldSplit (V2)
+LongSplit (V2) [OK]
 
-FloatSplit (V3)
-DoubleSplit (V3)
+FieldSplit (V3)
+EntitySplitBuilder (V3)
 
-DateSplit (V4)
+FloatSplit (V4)
+DoubleSplit (V4)
+
+DateSplit (V5)
 
 
 EntitySplitBuilder

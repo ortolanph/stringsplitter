@@ -2,20 +2,41 @@ package org.pho.splitter.core.splits;
 
 import org.pho.splitter.core.exception.SplitterException;
 
+/**
+ *
+ */
 public class IntegerSplit extends AbstractSplitter<Integer> {
 
     private IntegerSplit(int start, int end, String... specialCharacters) {
         super(start, end, specialCharacters);
     }
 
+    /**
+     *
+     * @param start
+     * @param end
+     * @return
+     */
     public static IntegerSplit newIntegerSplit(int start, int end) {
         return new IntegerSplit(start, end);
     }
 
+    /**
+     *
+     * @param start
+     * @return
+     */
     public static IntegerSplit newIntegerSplit(int start) {
         return new IntegerSplit(start, END_OF_LINE);
     }
 
+    /**
+     *
+     * @param start
+     * @param end
+     * @param specialCharacters
+     * @return
+     */
     public static IntegerSplit newIntegerSplit(int start, int end, String... specialCharacters) {
         return new IntegerSplit(start, end, specialCharacters);
     }
