@@ -8,14 +8,8 @@ public class ShortSplit extends AbstractSplitter<Short> {
 
     private static final String NOTHING = "";
 
-    private ShortSplit(int start, int end) {
-        setStart(start);
-        setEnd(end);
-    }
-
-    private ShortSplit(int start, int end, String[] specialCharacters) {
-        this(start, end);
-        this.specialCharacters = specialCharacters;
+    private ShortSplit(int start, int end, String... specialCharacters) {
+        super(start, end, specialCharacters);
     }
 
     public static ShortSplit newShortSplit(int start, int end) {
@@ -45,15 +39,4 @@ public class ShortSplit extends AbstractSplitter<Short> {
         }
     }
 
-    private String removeSpecialCharacters(String source) {
-        String result = source;
-
-        if(specialCharacters != null) {
-            for (String specialCharacter : specialCharacters) {
-                result = result.replaceAll(specialCharacter, NOTHING);
-            }
-        }
-
-        return result;
-    }
 }

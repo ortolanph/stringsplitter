@@ -5,8 +5,7 @@ import org.pho.splitter.core.exception.SplitterException;
 public class IntegerSplit extends AbstractSplitter<Integer> {
 
     private IntegerSplit(int start, int end, String... specialCharacters) {
-        setStart(start);
-        setEnd(end);
+        super(start, end, specialCharacters);
     }
 
     public static IntegerSplit newIntegerSplit(int start, int end) {

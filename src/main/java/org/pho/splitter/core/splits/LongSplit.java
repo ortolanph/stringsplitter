@@ -1,12 +1,13 @@
 package org.pho.splitter.core.splits;
 
+import org.pho.splitter.core.exception.SplitterException;
+
 public class LongSplit extends AbstractSplitter<Long> {
 
     private String[] specialCharacters;
 
     private LongSplit(int start, int end, String... specialCharacters) {
-        setStart(start);
-        setEnd(end);
+        super(start, end, specialCharacters);
     }
 
     public static LongSplit newLongSplit(int start, int end, String... specialCharacters) {
@@ -17,7 +18,15 @@ public class LongSplit extends AbstractSplitter<Long> {
         return new LongSplit(start, END_OF_LINE, specialCharacters);
     }
 
-    @Override public Long split(String source) {
-        return null;
+    @Override public Long split(String source) throws SplitterException {
+        String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
+        result = removeSpecialCharacters(result);
+
+        try {
+            return Long.valueOf(result.trim());
+        } catch (Exception e) {
+            throw new SplitterException(e.getMessage(), e);
+        }
     }
+
 }

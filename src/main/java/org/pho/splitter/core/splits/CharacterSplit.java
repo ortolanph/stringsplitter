@@ -3,8 +3,7 @@ package org.pho.splitter.core.splits;
 public class CharacterSplit extends AbstractSplitter<Character> {
 
     private CharacterSplit(int start) {
-        setStart(start);
-        setEnd(start + 1);
+        super(start, start + 1);
     }
 
     public static CharacterSplit newCharacterSplit(int start) {

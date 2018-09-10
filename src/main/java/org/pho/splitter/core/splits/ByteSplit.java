@@ -5,8 +5,7 @@ import org.pho.splitter.core.exception.SplitterException;
 public class ByteSplit extends AbstractSplitter<Byte> {
 
     private ByteSplit(int start, int end) {
-        setStart(start);
-        setEnd(end);
+        super(start, end);
     }
 
     public static ByteSplit newByteSplit(int start, int end) {

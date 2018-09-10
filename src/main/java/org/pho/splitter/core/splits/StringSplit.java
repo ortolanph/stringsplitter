@@ -7,8 +7,7 @@ public class StringSplit extends AbstractSplitter<String> {
     private boolean trimmed;
 
     private StringSplit(int start, int end, WordCase wordCase, boolean trimmed) {
-        setStart(start);
-        setEnd(end);
+        super(start, end);
         this.wordCase = wordCase;
         this.trimmed = trimmed;
     }

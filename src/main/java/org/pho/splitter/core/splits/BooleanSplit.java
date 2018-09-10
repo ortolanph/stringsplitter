@@ -7,8 +7,7 @@ public class BooleanSplit extends AbstractSplitter<Boolean> {
     private Function<String, Boolean> conversionFunction;
 
     private BooleanSplit(int start, int end, Function<String, Boolean> conversionFunction) {
-        setStart(start);
-        setEnd(end);
+        super(start, end);
         this.conversionFunction = conversionFunction;
     }
 

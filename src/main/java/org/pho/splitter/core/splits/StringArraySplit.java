@@ -9,6 +9,7 @@ public class StringArraySplit extends AbstractSplitter<List<String>> {
     private List<StringSplit> splitters;
 
     public StringArraySplit() {
+        super(0,0);
         splitters = new ArrayList<>();
     }
 
