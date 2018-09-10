@@ -4,19 +4,9 @@ import org.pho.splitter.core.exception.SplitterException;
 
 public class IntegerSplit extends AbstractSplitter<Integer> {
 
-    private String[] specialCharacters;
-
-    private static final String NOTHING = "";
-
-    private IntegerSplit(int start, int end) {
-        setStart(start);
-        setEnd(end);
-    }
-
     private IntegerSplit(int start, int end, String... specialCharacters) {
         setStart(start);
         setEnd(end);
-        this.specialCharacters = specialCharacters;
     }
 
     public static IntegerSplit newIntegerSplit(int start, int end) {
@@ -44,17 +34,5 @@ public class IntegerSplit extends AbstractSplitter<Integer> {
         } catch (Exception e) {
             throw new SplitterException(e.getMessage(), e);
         }
-    }
-
-    private String removeSpecialCharacters(String source) {
-        String result = source;
-
-        if(specialCharacters != null) {
-            for (String specialCharacter : specialCharacters) {
-                result = result.replaceAll(specialCharacter, NOTHING);
-            }
-        }
-
-        return result;
     }
 }

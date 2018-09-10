@@ -19,7 +19,7 @@ class LongSplitTest {
     @Disabled
     @DisplayName("Long split test positive number")
     public void positiveLong() throws SplitterException {
-        long actual = LongSplit.newLongSplit(0, 11).split(DATA);
+        long actual = LongSplit.newLongSplit(0, 20).split(DATA);
         long expected = 36_854_775_807L;
         assertEquals(expected, actual);
     }
@@ -28,7 +28,7 @@ class LongSplitTest {
     @Disabled
     @DisplayName("Long split test negative number")
     public void negativeShort() throws SplitterException {
-        long actual = LongSplit.newLongSplit(11, 22).split(DATA);
+        long actual = LongSplit.newLongSplit(20, 40).split(DATA);
         long expected = -36_854_775_808L;
         assertEquals(expected, actual);
     }
@@ -37,7 +37,7 @@ class LongSplitTest {
     @Disabled
     @DisplayName("Long split test max")
     public void maximumLongNumber() throws SplitterException {
-        long actual = LongSplit.newLongSplit(22, 33).split(DATA);
+        long actual = LongSplit.newLongSplit(40, 60).split(DATA);
         long expected = Long.MAX_VALUE;
         assertEquals(expected, actual);
     }
@@ -46,7 +46,7 @@ class LongSplitTest {
     @Disabled
     @DisplayName("Long split test min")
     public void minimumLongNumber() throws SplitterException {
-        long actual = LongSplit.newLongSplit(33, 44).split(DATA);
+        long actual = LongSplit.newLongSplit(60, 80).split(DATA);
         long expected = Long.MIN_VALUE;
         assertEquals(expected, actual);
     }
@@ -55,21 +55,21 @@ class LongSplitTest {
     @Disabled
     @DisplayName("Long split exception String information")
     public void notAnLong() {
-        assertThrows(SplitterException.class, () -> LongSplit.newLongSplit(44, 55).split(DATA));
+        assertThrows(SplitterException.class, () -> LongSplit.newLongSplit(80, 100).split(DATA));
     }
 
     @Test
     @Disabled
     @DisplayName("Long split exception out of range")
     public void outOfRange() {
-        assertThrows(SplitterException.class, () -> LongSplit.newLongSplit(55).split(DATA));
+        assertThrows(SplitterException.class, () -> LongSplit.newLongSplit(100).split(DATA));
     }
 
     @Test
     @Disabled
     @DisplayName("Long split no upper limit")
     public void noLimitLong() throws SplitterException {
-        long actual = LongSplit.newLongSplit(11).split(NO_LIMIT_DATA);
+        long actual = LongSplit.newLongSplit(20).split(NO_LIMIT_DATA);
         long expected = -36_854_775_808L;
         assertEquals(expected, actual);
     }
@@ -78,7 +78,7 @@ class LongSplitTest {
     @Disabled
     @DisplayName("Formatted positive Long split test")
     public void formattedPositiveLong() throws SplitterException {
-        long actual = LongSplit.newLongSplit(0, 11, ",").split(FORMATTED_DATA);
+        long actual = LongSplit.newLongSplit(0, 20, ",").split(FORMATTED_DATA);
         long expected = 36_854_775_807L;
         assertEquals(expected, actual);
     }
@@ -87,7 +87,7 @@ class LongSplitTest {
     @Disabled
     @DisplayName("Formatted negative Long split test")
     public void formattedNegativeLong() throws SplitterException {
-        long actual = LongSplit.newLongSplit(11, ",").split(FORMATTED_DATA);
+        long actual = LongSplit.newLongSplit(20, ",").split(FORMATTED_DATA);
         long expected = -36_854_775_808L;
         assertEquals(expected, actual);
     }
