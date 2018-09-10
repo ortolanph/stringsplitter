@@ -14,6 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
     private static final String DATA = "1STRING SPLITTER     JAVA8     POM       JAR       1.0.0   ";
 
+    private static final String DATA_TWO = "DATA      ";
+
     @Test
     @DisplayName("Builder Test")
     public void buildTest() {
@@ -122,6 +124,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
                 .addStringSplit(51, true)
                 .build()
                 .split(DATA);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Builder Test for remaining methods")
+    public void buildTestWordCaseAndTrimmed() {
+        List<String> expected =
+            new ArrayList<>(Arrays.asList(
+                "data",
+                "data      "
+            ));
+
+        List<String> actual =
+            StringArraySplitterBuilder
+                .newSplitter()
+                .addStringSplit(0, WordCase.LOWER_CASE, true)
+                .addStringSplit(0, WordCase.LOWER_CASE)
+                .build()
+                .split(DATA_TWO);
 
         assertEquals(expected, actual);
     }
