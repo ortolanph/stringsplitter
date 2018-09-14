@@ -20,10 +20,10 @@ public enum WordCase implements Function<String, String> {
      */
     NO_CASE(s -> s);
 
-    private Function<String, String> trimFunction;
+    private Function<String, String> caseFunction;
 
-    WordCase(Function<String, String> trimFunction) {
-        this.trimFunction = trimFunction;
+    WordCase(Function<String, String> caseFunction) {
+        this.caseFunction = caseFunction;
     }
 
     /**
@@ -32,6 +32,6 @@ public enum WordCase implements Function<String, String> {
      * @return
      */
     @Override public String apply(String s) {
-        return trimFunction.apply(s);
+        return caseFunction.apply(s);
     }
 }
