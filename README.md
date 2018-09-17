@@ -73,11 +73,35 @@ List<String> result =
         .split(data);
 ```
 
-### Splitting Characters
+
+### Splitting Bytes
+
+```java
+String data = "FAILED SUCCESS";
+
+Function conversionFunction<String, Boolean> = myTrue => {
+    if(myTrue.equals("FAILED ") {
+        return Boolean.FALSE;
+    }
+
+    if(myTrue.equals("SUCCESS") {
+        return Boolean.TRUE;
+    }
+
+    return Boolean.FALSE;
+};
+
+BooleanSplit booleanSplit = BooleanSplit.newBooleanSplit(0, 7, conversionFunction);
+
+boolean hasCompleted = booleanSplit.split(data);
+
+```
+
+### Splitting Bytes
 
 `TBD`
 
-### Splitting Bytes
+### Splitting Characters
 
 `TBD`
 

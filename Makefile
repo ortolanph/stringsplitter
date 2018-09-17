@@ -9,6 +9,10 @@ report-online:
 report-offline:
 	@mvn clean test jacoco:report
 	@google-chrome target/site/jacoco/index.html
+	
+docs-offline:
+	@mvn javadoc:javadoc
+	@google-chrome target/site/apidocs/index.html
 
 compile:
 	@mvn compile

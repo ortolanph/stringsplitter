@@ -17,34 +17,34 @@ DateSplit (V5)
 
 EntitySplitBuilder
 
-    .for(String clazz) (V2)
+    .for(String clazz) (V3)
 
-    .for(Class<T> clazz) (V2)
+    .for(Class<T> clazz) (V3)
 
-    .stringField(String name, StringSplit split) (V2)
+    .stringField(String name, StringSplit split) (V3)
 
-    .stringArrayField(String name, StringArraySplit split) (V2)
+    .stringArrayField(String name, StringArraySplit split) (V3)
 
-    .booleanField(String name, BooleanSplit split) (V2)
+    .booleanField(String name, BooleanSplit split) (V3)
 
-    .byteField(String name, ByteSplit split) (V2)
+    .byteField(String name, ByteSplit split) (V3)
 
-    .shortField(String name, ShortSplit split) (V2)
+    .shortField(String name, ShortSplit split) (V3)
 
-    .charField(String name, CharacterSplit split) (V2)
+    .charField(String name, CharacterSplit split) (V3)
 
-    .intField(String name, IntegerSplit split) (V2)
+    .intField(String name, IntegerSplit split) (V3)
 
-    .longField(String name, IntegerSplit split) (V2)
+    .longField(String name, IntegerSplit split) (V3)
 
-    .fields(FieldSplit... splits) (V2)
+    .fields(FieldSplit... splits) (V3)
 
-    .floatField(String name, FloatSplit split) (V3)
+    .floatField(String name, FloatSplit split) (V4)
 
-    .doubleField(String name, DoubleSplit split) (V3)
+    .doubleField(String name, DoubleSplit split) (V4)
 
-    .dateField(String name, DateSplit split) (V4)
+    .dateField(String name, DateSplit split) (V5)
 
-    .entityField(String name, EntitySplit split) (V4)
+    .entityField(String name, EntitySplit split) (V5)
 
-    .buildEntity(): T; (V2)
+    .buildEntity(): T; (V3)

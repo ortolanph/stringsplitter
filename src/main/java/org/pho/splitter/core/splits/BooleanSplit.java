@@ -3,7 +3,7 @@ package org.pho.splitter.core.splits;
 import java.util.function.Function;
 
 /**
- *
+ * Converts a String split into a <strong>Boolean</strong>.
  */
 public class BooleanSplit extends AbstractSplitter<Boolean> {
 
@@ -15,30 +15,35 @@ public class BooleanSplit extends AbstractSplitter<Boolean> {
     }
 
     /**
+     * Adds a String conversion into a Boolean.
      *
-     * @param start
-     * @param end
-     * @param conversionFunction
-     * @return
+     * @param start where the split starts
+     * @param end where the split ends
+     * @param conversionFunction the conversion function. It can convert a <code>0</code> to <code>false</code> and
+     *                           <code>1</code> to <code>true</code>
+     * @return an instance of BoooleanSplit
      */
     public static BooleanSplit newBooleanSplit(int start, int end, Function<String, Boolean> conversionFunction) {
         return new BooleanSplit(start, end, conversionFunction);
     }
 
     /**
+     * Adds a String conversion into a Boolean.
      *
-     * @param start
-     * @param conversionFunction
-     * @return
+     * @param start where the split starts
+     * @param conversionFunction the conversion function. It can convert a <code>0</code> to <code>false</code> and
+     *                           <code>1</code> to <code>true</code>
+     * @return an instance of BoooleanSplit
      */
     public static BooleanSplit newBooleanSplit(int start, Function<String, Boolean> conversionFunction) {
         return new BooleanSplit(start, END_OF_LINE, conversionFunction);
     }
 
     /**
+     * Splits the String source.
      *
-     * @param source
-     * @return
+     * @param source the String source
+     * @return a Boolean coverted from a String
      */
     @Override public Boolean split(String source)  {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
