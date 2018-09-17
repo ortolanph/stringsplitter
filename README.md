@@ -74,7 +74,7 @@ List<String> result =
 ```
 
 
-### Splitting Bytes
+### Splitting Booleans
 
 ```java
 String data = "FAILED SUCCESS";
