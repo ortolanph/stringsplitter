@@ -40,10 +40,10 @@ public class BooleanSplit extends AbstractSplitter<Boolean> {
     }
 
     /**
-     * Splits the String source.
+     * Splits the String source into a boolean.
      *
      * @param source the String source
-     * @return a Boolean coverted from a String
+     * @return a Boolean converted from a String
      */
     @Override public Boolean split(String source)  {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();

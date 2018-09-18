@@ -99,7 +99,14 @@ boolean hasCompleted = booleanSplit.split(data);
 
 ### Splitting Bytes
 
-`TBD`
+```java
+String data = "textfile.txt  40KB";
+
+ByteSplit byteSplit = ByteSplit.newByteSplit(12, 16);
+
+byte fileSize = byteSplit.split(data);
+
+```
 
 ### Splitting Characters
 
