@@ -110,7 +110,13 @@ byte fileSize = byteSplit.split(data);
 
 ### Splitting Characters
 
-`TBD`
+```java
+String data = "↑↑↓↓←→←→BA";
+
+CharacterSplit characterSplit = CharacterSplit.newCharacterSplit(1);
+
+char direction = characterSplit.split(data);
+```
 
 ### Splitting Shorts
 
