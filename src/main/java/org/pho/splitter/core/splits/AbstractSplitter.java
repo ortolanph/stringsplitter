@@ -6,6 +6,7 @@ import org.pho.splitter.core.function.SplitFunction;
  * Abstract class to save basic information for specilized split.
  *
  * @param <T> The base type to be returned
+ * @author Paulo Henrique Ortolan
  */
 public abstract class AbstractSplitter<T> implements SplitFunction<T> {
 

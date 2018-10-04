@@ -4,6 +4,8 @@ import java.util.function.Function;
 
 /**
  * Word case enum to convert String cases.
+ *
+ * @author Paulo Henrique Ortolan
  */
 public enum WordCase implements Function<String, String> {
 

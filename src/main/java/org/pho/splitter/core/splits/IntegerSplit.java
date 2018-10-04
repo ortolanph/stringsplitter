@@ -4,6 +4,8 @@ import org.pho.splitter.core.exception.SplitterException;
 
 /**
  * Converts a String split into an <strong>Integer</strong>.
+ *
+ * @author Paulo Henrique Ortolan
  */
 public class IntegerSplit extends AbstractSplitter<Integer> {
 

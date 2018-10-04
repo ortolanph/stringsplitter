@@ -2,6 +2,8 @@ package org.pho.splitter.core.splits;
 
 /**
  * Converts a String split into a <strong>Character</strong>.
+ *
+ * @author Paulo Henrique Ortolan
  */
 public class CharacterSplit extends AbstractSplitter<Character> {
 

@@ -4,6 +4,8 @@ import org.pho.splitter.core.exception.SplitterException;
 
 /**
  * Converts a String split into a <strong>Long</strong>.
+ *
+ * @author Paulo Henrique Ortolan
  */
 public class LongSplit extends AbstractSplitter<Long> {
 

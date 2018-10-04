@@ -6,6 +6,7 @@ import org.pho.splitter.core.exception.SplitterException;
  * The main split function.
  *
  * @param <R> the type to be returned.
+ * @author Paulo Henrique Ortolan
  */
 @FunctionalInterface
 public interface SplitFunction<R> {

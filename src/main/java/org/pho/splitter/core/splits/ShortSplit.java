@@ -4,6 +4,8 @@ import org.pho.splitter.core.exception.SplitterException;
 
 /**
  * Converts a String split into a <strong>Short</strong>.
+ *
+ * @author Paulo Henrique Ortolan
  */
 public class ShortSplit extends AbstractSplitter<Short> {
 

@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 /**
  * Converts a StringSplit sequence into a <strong>List</strong> of <strong>String</strong>.
+ *
+ * @author Paulo Henrique Ortolan
  */
 public class StringArraySplit extends AbstractSplitter<List<String>> {
 

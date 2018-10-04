@@ -4,6 +4,8 @@ import java.util.function.Function;
 
 /**
  * Converts a String split into a <strong>Boolean</strong>.
+ *
+ * @author Paulo Henrique Ortolan
  */
 public class BooleanSplit extends AbstractSplitter<Boolean> {
 

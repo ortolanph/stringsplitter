@@ -6,6 +6,8 @@ import org.pho.splitter.core.splits.WordCase;
 
 /**
  * Builder to create String Array Splitter.
+ *
+ * @author Paulo Henrique Ortolan
  */
 public class StringArraySplitterBuilder {
 

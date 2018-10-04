@@ -4,6 +4,8 @@ import org.pho.splitter.core.exception.SplitterException;
 
 /**
  * Converts a String split into a <strong>Byte</strong>.
+ *
+ * @author Paulo Henrique Ortolan
  */
 public class ByteSplit extends AbstractSplitter<Byte> {
 

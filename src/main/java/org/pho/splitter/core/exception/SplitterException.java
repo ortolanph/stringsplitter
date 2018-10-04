@@ -2,6 +2,8 @@ package org.pho.splitter.core.exception;
 
 /**
  * Exception to be thrown when there's an error splitting strings.
+ *
+ * @author Paulo Henrique Ortolan
  */
 public class SplitterException extends Exception {
 
