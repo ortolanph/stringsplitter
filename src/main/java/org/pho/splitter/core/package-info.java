@@ -12,7 +12,8 @@ package org.pho.splitter.core;
  * The package <code>function</code> contains the functions that are used in the project
  * classes.
  *
- * The package <code>splits</code> contains all the splits for Java primitive types.
+ * The package <code>splits</code> contains all the splits for Java primitive types and
+ * other classes.
  *
  * @author Paulo Henrique Ortolan
  */

@@ -104,7 +104,7 @@ String data = "textfile.txt  40KB";
 
 ByteSplit byteSplit = ByteSplit.newByteSplit(12, 16);
 
-byte fileSize = byteSplit.split(data);
+byte fileSizeInKB = byteSplit.split(data);
 
 ```
 
@@ -120,13 +120,43 @@ char direction = characterSplit.split(data);
 
 ### Splitting Shorts
 
+```java
+
+String data = "BANK BRAND25892";
+
+ShortSplit shortSplit = ShortSplit.newShortSplit(10, 14);
+
+short agencyNumber = shortSplit.split(data);
+
+```
+
 `TBD`
 
 ### Splitting Integers
 
+```java
+
+String data = "FANCY LAPTOP i7     2,300";
+
+IntegerSplit split = IntegerSplit.newIntegerSplit(20, ",");
+
+int productPrice = split.split(data);
+
+```
+
 `TBD`
 
 ### Splitting Longs
+
+```java
+
+String data = "EARTH     149600000"
+
+LongSplit longSplit = LongSplit.newLongSplit(10);
+
+long distanceFromTheSun = longSplit.split(data);
+
+```
 
 `TBD`
 
