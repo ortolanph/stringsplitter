@@ -2,7 +2,7 @@ package org.pho.splitter.core.builders;
 
 import org.pho.splitter.core.splits.StringArraySplit;
 import org.pho.splitter.core.splits.StringSplit;
-import org.pho.splitter.core.splits.WordCase;
+import org.pho.splitter.core.splits.features.WordCase;
 
 /**
  * Builder to create String Array Splitter.

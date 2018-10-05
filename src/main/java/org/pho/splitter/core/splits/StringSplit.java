@@ -1,5 +1,7 @@
 package org.pho.splitter.core.splits;
 
+import org.pho.splitter.core.splits.features.WordCase;
+
 /**
  * Converts a String split into a <strong>String</strong>.
  *
