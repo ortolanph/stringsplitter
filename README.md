@@ -172,6 +172,9 @@ The following table shows the plans to evolve the framework:
 | 4 | FloatSplit, DoubleSplit, EntityBuilder update | To Be Implemented |
 | 5 | DateSplit, EntityBuilder update | To Be Implemented |
 
-## Java DataTypes
+## Reference
 
-https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+[Java Data Types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
+
+[Java Reflection, but Faster](https://dzone.com/articles/java-reflection-but-faster?edition=399225&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-09-25)
+
