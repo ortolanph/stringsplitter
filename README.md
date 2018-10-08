@@ -16,7 +16,6 @@ Java 8 or later.
 ### Splitting Strings
 
 ```java
-
 String data = "Collect THIS text";
 
 // Only the text
@@ -38,7 +37,6 @@ String resultUpperCase = StringSplit
 String resultUpperCase = StringSplit
     .newStringSplit(7, 12, WordCase.LOWER_CASE, true)
     .split(data);
-
 ```
 
 ### Splitting String Arrays
@@ -121,35 +119,26 @@ char direction = characterSplit.split(data);
 ### Splitting Shorts
 
 ```java
-
 String data = "BANK BRAND25892";
 
 ShortSplit shortSplit = ShortSplit.newShortSplit(10, 14);
 
 short agencyNumber = shortSplit.split(data);
-
 ```
-
-`TBD`
 
 ### Splitting Integers
 
 ```java
-
 String data = "FANCY LAPTOP i7     2,300";
 
 IntegerSplit split = IntegerSplit.newIntegerSplit(20, ",");
 
 int productPrice = split.split(data);
-
 ```
-
-`TBD`
 
 ### Splitting Longs
 
 ```java
-
 String data = "EARTH     149600000"
 
 LongSplit longSplit = LongSplit.newLongSplit(10);
@@ -157,8 +146,6 @@ LongSplit longSplit = LongSplit.newLongSplit(10);
 long distanceFromTheSun = longSplit.split(data);
 
 ```
-
-`TBD`
 
 ## Next versions
 
@@ -178,3 +165,5 @@ The following table shows the plans to evolve the framework:
 
 [Java Reflection, but Faster](https://dzone.com/articles/java-reflection-but-faster?edition=399225&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-09-25)
 
+[Setters, Method Handles, and Java 11
+](https://dzone.com/articles/setters-method-handles-and-java-11)

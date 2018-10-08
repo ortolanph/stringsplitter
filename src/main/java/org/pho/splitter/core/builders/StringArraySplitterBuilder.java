@@ -9,7 +9,7 @@ import org.pho.splitter.core.splits.features.WordCase;
  *
  * @author Paulo Henrique Ortolan
  */
-public class StringArraySplitterBuilder {
+public final class StringArraySplitterBuilder {
 
     private static final StringArraySplitterBuilder INSTANCE = new StringArraySplitterBuilder();
 
