@@ -1,8 +1,8 @@
-package org.pho.splitter.core.builders.entity;
+package org.pho.splitter.core.builders;
 
 import java.util.List;
 
-public class Project {
+class Project {
 
     private int id;
 

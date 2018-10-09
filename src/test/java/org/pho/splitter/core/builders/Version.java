@@ -1,6 +1,6 @@
-package org.pho.splitter.core.builders.entity;
+package org.pho.splitter.core.builders;
 
-public class Version {
+class Version {
 
     private int major;
 

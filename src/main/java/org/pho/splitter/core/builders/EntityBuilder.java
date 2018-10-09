@@ -1,8 +1,6 @@
 package org.pho.splitter.core.builders;
 
-import org.pho.splitter.core.splits.FieldSplit;
-import org.pho.splitter.core.splits.IntegerSplit;
-import org.pho.splitter.core.splits.StringSplit;
+import org.pho.splitter.core.splits.*;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
@@ -39,36 +37,114 @@ public final class EntityBuilder {
         return INSTANCE;
     }
 
+    /**
+     *
+     * @param clazz
+     * @return
+     */
     public EntityBuilder forClass(String clazz) {
         this.clazz = clazz;
         return this;
     }
 
+    /**
+     *
+     * @param clazz
+     * @return
+     */
     public EntityBuilder forClass(Class clazz) {
         this.clazz = clazz.getCanonicalName();
         return this;
     }
 
+    /**
+     *
+     * @param name
+     * @param split
+     * @return
+     */
     public EntityBuilder stringField(String name, StringSplit split) {
-        splits.add(FieldSplit.newFieldSplit(name, split));
-        return this;
+        return addSplitter(name, split);
     }
 
-//    public EntityBuilder stringArrayField(String name, StringArraySplit split) { return this; }
-//    public EntityBuilder booleanField(String name, BooleanSplit split) { return this; }
-//    public EntityBuilder byteField(String name, ByteSplit split) { return this; }
-//    public EntityBuilder shortField(String name, ShortSplit split) { return this; }
-//    public EntityBuilder charField(String name, CharacterSplit split) { return this; }
+    /**
+     *
+     * @param name
+     * @param split
+     * @return
+     */
+    public EntityBuilder stringArrayField(String name, StringArraySplit split) {
+        return addSplitter(name, split);
+    }
 
+    /**
+     *
+     * @param name
+     * @param split
+     * @return
+     */
+    public EntityBuilder booleanField(String name, BooleanSplit split) {
+        return addSplitter(name, split);
+    }
+
+    /**
+     *
+     * @param name
+     * @param split
+     * @return
+     */
+    public EntityBuilder byteField(String name, ByteSplit split) {
+        return addSplitter(name, split);
+    }
+
+    /**
+     *
+     * @param name
+     * @param split
+     * @return
+     */
+    public EntityBuilder shortField(String name, ShortSplit split) {
+        return addSplitter(name, split);
+    }
+
+    /**
+     *
+     * @param name
+     * @param split
+     * @return
+     */
+    public EntityBuilder characterField(String name, CharacterSplit split) {
+        return addSplitter(name, split);
+    }
+
+    /**
+     *
+     * @param name
+     * @param split
+     * @return
+     */
     public EntityBuilder intField(String name, IntegerSplit split) {
-        splits.add(FieldSplit.newFieldSplit(name, split));
-        return this;
+        return addSplitter(name, split);
     }
 
-//    public EntityBuilder longField(String name, IntegerSplit split) { return this; }
+    /**
+     *
+     * @param name
+     * @param split
+     * @return
+     */
+    public EntityBuilder longField(String name, LongSplit split) {
+        return addSplitter(name, split);
+    }
+    
 //    public EntityBuilder fields(FieldSplit... splits) { return this; }
 
     // Please, refactor me!
+    /**
+     *
+     * @param source
+     * @return
+     */
     public Object buildEntity(String source) {
         try {
             final MethodHandles.Lookup lookup = MethodHandles.lookup();
@@ -98,6 +174,11 @@ public final class EntityBuilder {
         }
 
         return null;
+    }
+    
+    private EntityBuilder addSplitter(String name, AbstractSplitter<?> split) {
+        splits.add(FieldSplit.newFieldSplit(name, split));
+        return this;
     }
 
     // Please, refactor me!
@@ -137,7 +218,6 @@ public final class EntityBuilder {
         }
 
         return null;
-
     }
     
 }
