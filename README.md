@@ -155,9 +155,11 @@ The following table shows the plans to evolve the framework:
 |:-------:| ------- |:------:|
 | 1 | Framework architecture | Implemented |
 | 2 | StringSplit, StringArraySplit, CharacterSplit, ByteSplit, ShortSplit, IntegerSplit, LongSplit | Implemented |
-| 3 | EntityBuilder, FieldSplit | To Be Implemented |
+| 3 | EntityBuilder, FieldSplit | Under development |
 | 4 | FloatSplit, DoubleSplit, EntityBuilder update | To Be Implemented |
 | 5 | DateSplit, EntityBuilder update | To Be Implemented |
+| 6 | Annotations and Annotations Processing | To Be Defined |
+| 7 | Maven central plans | To Be Defined |
 
 ## Reference
 
