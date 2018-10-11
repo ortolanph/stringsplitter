@@ -28,6 +28,7 @@ class EntityBuilderTest {
     public void setUp() {
         entityBuilder = EntityBuilder.newEntityBuilder();
         clazzName = Project.class.getCanonicalName();
+        expectedProject = createTestProject();
     }
 
     @Test
@@ -66,7 +67,7 @@ class EntityBuilderTest {
             .stringField("name", StringSplit.newSplit(5, 25, WordCase.LOWER_CASE, true))
             .buildEntity(DATA);
 
-        String expected = "string splitter";
+        String expected = expectedProject.getName();
 
         assertAll(
                 () -> assertTrue(project instanceof Project),
@@ -82,8 +83,8 @@ class EntityBuilderTest {
             .intField("businessCode", IntegerSplit.newIntegerSplit(36, 41))
             .buildEntity(DATA);
 
-        int idExpected = 1;
-        int businessCodeExpected = 11001;
+        int idExpected = expectedProject.getId();
+        int businessCodeExpected = expectedProject.getBusinessCode();
 
         assertAll(
                 () -> assertTrue(project instanceof Project),
@@ -98,7 +99,7 @@ class EntityBuilderTest {
             .booleanField("active", BooleanSplit.newBooleanSplit(25, 30, TRUE_FALSE_FUNCTION))
             .buildEntity(DATA);
 
-        boolean activeExpected = true;
+        boolean activeExpected = expectedProject.isActive();
 
         assertAll(
             () -> assertTrue(project instanceof Project),
@@ -112,7 +113,7 @@ class EntityBuilderTest {
             .characterField("symbol", CharacterSplit.newCharacterSplit(30))
             .buildEntity(DATA);
 
-        char symbolExpected = 'æ';
+        char symbolExpected = expectedProject.getSymbol();
 
         assertAll(
             () -> assertTrue(project instanceof Project),
@@ -126,7 +127,7 @@ class EntityBuilderTest {
             .byteField("teamSize", ByteSplit.newByteSplit(31, 33))
             .buildEntity(DATA);
 
-        byte teamSizeExpected = 4;
+        byte teamSizeExpected = expectedProject.getTeamSize();
 
         assertAll(
             () -> assertTrue(project instanceof Project),
@@ -141,7 +142,7 @@ class EntityBuilderTest {
             .shortField("lunchTime", ShortSplit.newShortSplit(33, 36))
             .buildEntity(DATA);
 
-        short lunchTimeExpected = 90;
+        short lunchTimeExpected = expectedProject.getLunchTime();
 
         assertAll(
             () -> assertTrue(project instanceof Project),
@@ -155,7 +156,7 @@ class EntityBuilderTest {
             .longField("responsibleCode", LongSplit.newLongSplit(41, 49))
             .buildEntity(DATA);
 
-        long responsibleCodeExpected = 88201101l;
+        long responsibleCodeExpected = expectedProject.getResponsibleCode();
 
         assertAll(
             () -> assertTrue(project instanceof Project),
@@ -176,13 +177,7 @@ class EntityBuilderTest {
                 .build())
             .buildEntity(DATA);
 
-        List<String> expectedKewords = new ArrayList<>();
-
-        expectedKewords.add("java");
-        expectedKewords.add("splitters");
-        expectedKewords.add("primitives");
-        expectedKewords.add("objects");
-        expectedKewords.add("maven");
+        List<String> expectedKewords = expectedProject.getKeywords();
 
         assertAll(
             () -> assertTrue(project instanceof Project),
@@ -190,10 +185,85 @@ class EntityBuilderTest {
         );
     }
 
+    @Test
+    public void fields() {
+        Project actual = (Project)entityBuilder
+            .forClass(Project.class)
+            .fields(
+                FieldSplit.newFieldSplit("id", IntegerSplit.newIntegerSplit(0, 5)),
+                FieldSplit.newFieldSplit("name", StringSplit.newSplit(5, 25, WordCase.LOWER_CASE, true)),
+                FieldSplit.newFieldSplit("active", BooleanSplit.newBooleanSplit(25, 30, TRUE_FALSE_FUNCTION)),
+                FieldSplit.newFieldSplit("symbol", CharacterSplit.newCharacterSplit(30)),
+                FieldSplit.newFieldSplit("teamSize", ByteSplit.newByteSplit(31, 33)),
+                FieldSplit.newFieldSplit("lunchTime", ShortSplit.newShortSplit(33, 36)),
+                FieldSplit.newFieldSplit("businessCode", IntegerSplit.newIntegerSplit(36, 41)),
+                FieldSplit.newFieldSplit("responsibleCode", LongSplit.newLongSplit(41, 49)),
+                FieldSplit.newFieldSplit("keywords", StringArraySplitterBuilder
+                    .newSplitter()
+                    .addStringSplit(49, 59, WordCase.LOWER_CASE, true)
+                    .addStringSplit(59, 69, WordCase.LOWER_CASE, true)
+                    .addStringSplit(69, 79, WordCase.LOWER_CASE, true)
+                    .addStringSplit(79, 89, WordCase.LOWER_CASE, true)
+                    .addStringSplit(89, 96, WordCase.LOWER_CASE, true)
+                    .build()))
+            .buildEntity(DATA);
+
+        Project expected = createTestProject();
+
+        assertAll(
+            () -> assertTrue(actual instanceof Project),
+            () -> assertEquals(expected.getId(), actual.getId()),
+            () -> assertEquals(expected.getName(), actual.getName()),
+            () -> assertEquals(expected.isActive(), actual.isActive()),
+            () -> assertEquals(expected.getSymbol(), actual.getSymbol()),
+            () -> assertEquals(expected.getTeamSize(), actual.getTeamSize()),
+            () -> assertEquals(expected.getLunchTime(), actual.getLunchTime()),
+            () -> assertEquals(expected.getBusinessCode(), actual.getBusinessCode()),
+            () -> assertEquals(expected.getResponsibleCode(), actual.getResponsibleCode()),
+            () -> assertEquals(expected.getKeywords(), actual.getKeywords())
+        );
+    }
+
+    @Test
+    public void splits() {
+        Project actual = (Project)entityBuilder
+            .forClass(Project.class)
+            .intField("id",  IntegerSplit.newIntegerSplit(0, 5))
+            .stringField("name", StringSplit.newSplit(5, 25, WordCase.LOWER_CASE, true))
+            .booleanField("active", BooleanSplit.newBooleanSplit(25, 30, TRUE_FALSE_FUNCTION))
+            .characterField("symbol", CharacterSplit.newCharacterSplit(30))
+            .byteField("teamSize", ByteSplit.newByteSplit(31, 33))
+            .shortField("lunchTime", ShortSplit.newShortSplit(33, 36))
+            .intField("businessCode", IntegerSplit.newIntegerSplit(36, 41))
+            .longField("responsibleCode", LongSplit.newLongSplit(41, 49))
+            .stringArrayField("keywords", StringArraySplitterBuilder
+                    .newSplitter()
+                    .addStringSplit(49, 59, WordCase.LOWER_CASE, true)
+                    .addStringSplit(59, 69, WordCase.LOWER_CASE, true)
+                    .addStringSplit(69, 79, WordCase.LOWER_CASE, true)
+                    .addStringSplit(79, 89, WordCase.LOWER_CASE, true)
+                    .addStringSplit(89, 96, WordCase.LOWER_CASE, true)
+                    .build())
+            .buildEntity(DATA);
+
+        Project expected = createTestProject();
+
+        assertAll(
+            () -> assertTrue(actual instanceof Project),
+            () -> assertEquals(expected.getId(), actual.getId()),
+            () -> assertEquals(expected.getName(), actual.getName()),
+            () -> assertEquals(expected.isActive(), actual.isActive()),
+            () -> assertEquals(expected.getSymbol(), actual.getSymbol()),
+            () -> assertEquals(expected.getTeamSize(), actual.getTeamSize()),
+            () -> assertEquals(expected.getLunchTime(), actual.getLunchTime()),
+            () -> assertEquals(expected.getBusinessCode(), actual.getBusinessCode()),
+            () -> assertEquals(expected.getResponsibleCode(), actual.getResponsibleCode()),
+            () -> assertEquals(expected.getKeywords(), actual.getKeywords())
+        );
+    }
+
     private Project createTestProject() {
         Project project = new Project();
-
-        String DATA = "    1STRING SPLITTER     TRUE æ 4 901100188201101JAVA      SPLITTERS PRIMITIVESOBJECTS   MAVEN  2  0  0";
 
         project.setId(1);
         project.setName("string splitter");

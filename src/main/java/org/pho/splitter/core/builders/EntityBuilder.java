@@ -8,6 +8,7 @@ import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 import java.lang.invoke.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
@@ -137,7 +138,10 @@ public final class EntityBuilder {
         return addSplitter(name, split);
     }
     
-//    public EntityBuilder fields(FieldSplit... splits) { return this; }
+    public EntityBuilder fields(FieldSplit... splits) {
+        this.splits.addAll(Arrays.asList(splits));
+        return this;
+    }
 
     // Please, refactor me!
     /**
