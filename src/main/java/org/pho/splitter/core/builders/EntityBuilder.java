@@ -25,8 +25,6 @@ public final class EntityBuilder {
 
     private String clazz;
 
-    private static final EntityBuilder INSTANCE = new EntityBuilder();
-
     private EntityBuilder() {
         splits = new ArrayList<>();
     }
@@ -35,7 +33,7 @@ public final class EntityBuilder {
      *
      */
     public static EntityBuilder newEntityBuilder() {
-        return INSTANCE;
+        return new EntityBuilder();
     }
 
     /**
