@@ -1,11 +1,13 @@
 package org.pho.splitter.core.splits;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.pho.splitter.core.splits.features.WordCase;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Disabled
 class FieldSplitTest {
 
     private static final String DATA = "NONONOSPLIT THIS TEXTNONONO";
