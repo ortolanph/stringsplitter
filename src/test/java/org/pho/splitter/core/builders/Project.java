@@ -2,7 +2,7 @@ package org.pho.splitter.core.builders;
 
 import java.util.List;
 
-class Project {
+public class Project {
 
     private int id;
 
@@ -23,6 +23,8 @@ class Project {
     private List<String> keywords;
 
     private Version version;
+
+    public Project() {}
 
     public int getId() {
         return id;

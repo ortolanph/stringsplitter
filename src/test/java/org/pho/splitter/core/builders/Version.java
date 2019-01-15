@@ -1,12 +1,14 @@
 package org.pho.splitter.core.builders;
 
-class Version {
+public class Version {
 
     private int major;
 
     private int minor;
 
     private int bugfix;
+
+    public Version() {}
 
     public int getMajor() {
         return major;

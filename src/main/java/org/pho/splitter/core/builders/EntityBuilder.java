@@ -155,7 +155,9 @@ public final class EntityBuilder {
         try {
             final MethodHandles.Lookup lookup = MethodHandles.lookup();
 
-            Object object = Class.forName(clazz).newInstance();
+            MethodHandle constructorHandler = MethodHandles.publicLookup().findConstructor(Class.forName(clazz), MethodType.methodType(Void.class));
+
+            Object object = constructorHandler.invoke();
 
             for(FieldSplit split : splits) {
                 PropertyDescriptor fieldDescriptor = getDescriptor(split.getFieldName());
@@ -177,6 +179,8 @@ public final class EntityBuilder {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
         }
 
         return null;

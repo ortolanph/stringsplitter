@@ -1,12 +1,15 @@
 package org.pho.splitter.core.splits;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.pho.splitter.core.builders.EntityBuilder;
+import org.pho.splitter.core.builders.Version;
 import org.pho.splitter.core.exception.SplitterException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//@Disabled
 class EntitySplitTest {
 
     private static final String DATA = "  2  0  0";
