@@ -262,6 +262,45 @@ class EntityBuilderTest {
         );
     }
 
+    @Test
+    public void subEntity() {
+        Project actual = (Project)entityBuilder
+                .forClass(Project.class)
+                .intField("id",  IntegerSplit.newIntegerSplit(0, 5))
+                .stringField("name", StringSplit.newSplit(5, 25, WordCase.LOWER_CASE, true))
+                .booleanField("active", BooleanSplit.newBooleanSplit(25, 30, TRUE_FALSE_FUNCTION))
+                .characterField("symbol", CharacterSplit.newCharacterSplit(30))
+                .byteField("teamSize", ByteSplit.newByteSplit(31, 33))
+                .shortField("lunchTime", ShortSplit.newShortSplit(33, 36))
+                .intField("businessCode", IntegerSplit.newIntegerSplit(36, 41))
+                .longField("responsibleCode", LongSplit.newLongSplit(41, 49))
+                .stringArrayField("keywords", StringArraySplitterBuilder
+                        .newSplitter()
+                        .addStringSplit(49, 59, WordCase.LOWER_CASE, true)
+                        .addStringSplit(59, 69, WordCase.LOWER_CASE, true)
+                        .addStringSplit(69, 79, WordCase.LOWER_CASE, true)
+                        .addStringSplit(79, 89, WordCase.LOWER_CASE, true)
+                        .addStringSplit(89, 96, WordCase.LOWER_CASE, true)
+                        .build())
+                .entityField(null, null )
+                .buildEntity(DATA);
+
+        Project expected = createTestProject();
+
+        assertAll(
+                () -> assertTrue(actual instanceof Project),
+                () -> assertEquals(expected.getId(), actual.getId()),
+                () -> assertEquals(expected.getName(), actual.getName()),
+                () -> assertEquals(expected.isActive(), actual.isActive()),
+                () -> assertEquals(expected.getSymbol(), actual.getSymbol()),
+                () -> assertEquals(expected.getTeamSize(), actual.getTeamSize()),
+                () -> assertEquals(expected.getLunchTime(), actual.getLunchTime()),
+                () -> assertEquals(expected.getBusinessCode(), actual.getBusinessCode()),
+                () -> assertEquals(expected.getResponsibleCode(), actual.getResponsibleCode()),
+                () -> assertEquals(expected.getKeywords(), actual.getKeywords())
+        );
+    }
+
     private Project createTestProject() {
         Project project = new Project();
 

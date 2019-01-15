@@ -141,7 +141,11 @@ public final class EntityBuilder {
         return this;
     }
 
+    public EntityBuilder entityField(String name, EntitySplit split) {
+        return null;
+    }
     // Please, refactor me!
+
     /**
      *
      * @param source
@@ -177,13 +181,13 @@ public final class EntityBuilder {
 
         return null;
     }
-    
+
     private EntityBuilder addSplitter(String name, AbstractSplitter<?> split) {
         splits.add(FieldSplit.newFieldSplit(name, split));
         return this;
     }
-
     // Please, refactor me!
+
     private static BiConsumer createSetter(final MethodHandles.Lookup lookup,
         final MethodHandle setter) throws Exception {
         final CallSite site = LambdaMetafactory.metafactory(lookup,
@@ -200,8 +204,8 @@ public final class EntityBuilder {
             throw new Error(e);
         }
     }
-
     // Please, refactor me!
+
     private PropertyDescriptor getDescriptor(String fieldName) {
         final BeanInfo beanInfo;
         try {
@@ -221,5 +225,4 @@ public final class EntityBuilder {
 
         return null;
     }
-    
 }
