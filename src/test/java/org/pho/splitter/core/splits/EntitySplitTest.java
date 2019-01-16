@@ -9,7 +9,7 @@ import org.pho.splitter.core.exception.SplitterException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-//@Disabled
+@Disabled
 class EntitySplitTest {
 
     private static final String DATA = "  2  0  0";
