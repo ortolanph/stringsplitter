@@ -8,7 +8,7 @@ import org.pho.splitter.core.function.SplitFunction;
  * @param <T> The base type to be returned
  * @author Paulo Henrique Ortolan
  */
-public abstract class AbstractSplitter<T> implements SplitFunction<T> {
+public abstract class   AbstractSplitter<T> implements SplitFunction<T> {
 
     /**
      * Means to the end of the line.
