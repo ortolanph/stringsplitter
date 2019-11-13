@@ -4,7 +4,7 @@ clean:
 	@mvn clean
 
 report-online:
-	@mvn clean test jacoco:report coveralss:report
+	@mvn clean test jacoco:report coveralls:report
 	
 report-offline:
 	@mvn clean test jacoco:report
