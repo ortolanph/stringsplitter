@@ -29,4 +29,4 @@ Implement splitters for date related objects.
 - [ ] **Other**
   - [ ] Update documentation
   - [ ] Merge with master
-  - [ ] Create a ZIP Release
+  - [ ] Create a JAR Release
