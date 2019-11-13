@@ -1,38 +1,53 @@
 package org.pho.splitter.core.splits;
 
-import jdk.vm.ci.meta.Local;
 import org.pho.splitter.core.exception.SplitterException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ *
+ */
 public class LocalDateSplit extends AbstractSplitter<LocalDate> {
 
-    private DateTimeFormatter format;
+    private DateTimeFormatter formatter;
 
-    /**
-     * Creates a new LocalDateSplitter.
-     *
-     * @param start             where the split starts
-     * @param end               where the split ends
-     * @param specialCharacters the special character to be removed
-     */
-    private LocalDateSplit(int start, int end, String... specialCharacters) {
-        super(start, end, specialCharacters);
+    private LocalDateSplit(int start) {
+        super(start, END_OF_LINE);
     }
 
+    private LocalDateSplit(int start, int end) {
+        super(start, end);
+    }
+
+    /**
+     *
+     * @param start
+     * @param end
+     * @return
+     */
     public static LocalDateSplit newLocalDateSplit(int start, int end) {
-        return new LocalDateSplit(start, end, null);
+        return new LocalDateSplit(start, end);
+    }
+
+    public static LocalDateSplit newLocalDateSplit(int start) {
+        return new LocalDateSplit(start);
     }
 
     public static LocalDateSplit newLocalDateSplit(int start, int end, DateTimeFormatter formatter) {
-        return null;
+        LocalDateSplit localDateSplit = newLocalDateSplit(start, end);
+        localDateSplit.formatter = formatter;
+        return localDateSplit;
+    }
+
+    public static LocalDateSplit newLocalDateSplit(int start, DateTimeFormatter formatter) {
+        return newLocalDateSplit(start, END_OF_LINE, formatter);
     }
 
     @Override
     public LocalDate split(String source) throws SplitterException {
-        return (format == null) ?
+        return (formatter == null) ?
                 LocalDate.parse(source.substring(getStart(), getEnd())) :
-                LocalDate.parse(source.substring(getStart(), getEnd()), format);
+                LocalDate.parse(source.substring(getStart(), getEnd()), formatter);
     }
 }

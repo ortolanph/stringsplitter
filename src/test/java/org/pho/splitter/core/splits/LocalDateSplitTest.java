@@ -13,6 +13,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
     private static final String DATA = "1977-12-1414/12/1977";
 
+    private static final String DATA_2 = "";
+
+    private static final String DATA_3 = "";
+
     @Test
     @DisplayName("Simple split")
     public void localDateSimpleDateSplit() throws SplitterException {
