@@ -17,7 +17,7 @@ public class StringArraySplit extends AbstractSplitter<List<String>> {
      * Creates a StringArraySplit object with no splits inside.
      */
     public StringArraySplit() {
-        super(0,0);
+        super(0, 0);
         splitters = new ArrayList<>();
     }
 
@@ -47,9 +47,9 @@ public class StringArraySplit extends AbstractSplitter<List<String>> {
      */
     public List<String> split(String source) {
         return splitters
-            .stream()
-            .map(s -> s.split(source))
-            .collect(Collectors.toList());
+                .stream()
+                .map(s -> s.split(source))
+                .collect(Collectors.toList());
     }
 
 }

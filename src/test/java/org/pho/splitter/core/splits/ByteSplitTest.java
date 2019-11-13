@@ -48,7 +48,7 @@ class ByteSplitTest {
     @Test
     @DisplayName("Byte split exception String information")
     public void notAByte() {
-        assertThrows(SplitterException.class, () -> ByteSplit.newByteSplit(16,20).split(DATA));
+        assertThrows(SplitterException.class, () -> ByteSplit.newByteSplit(16, 20).split(DATA));
     }
 
     @Test

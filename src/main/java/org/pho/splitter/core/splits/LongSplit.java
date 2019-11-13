@@ -18,8 +18,8 @@ public class LongSplit extends AbstractSplitter<Long> {
     /**
      * Adds a String conversion into a Long.
      *
-     * @param start start where the split starts
-     * @param end end end where the split ends
+     * @param start             start where the split starts
+     * @param end               end end where the split ends
      * @param specialCharacters special characters to be removed
      * @return an instance of LongSplit
      */
@@ -30,7 +30,7 @@ public class LongSplit extends AbstractSplitter<Long> {
     /**
      * Adds a String conversion into a Long.
      *
-     * @param start start where the split starts
+     * @param start             start where the split starts
      * @param specialCharacters special characters to be removed
      * @return an instance of LongSplit
      */
@@ -45,7 +45,8 @@ public class LongSplit extends AbstractSplitter<Long> {
      * @return a Long converted from a String
      * @throws SplitterException a Long converted from a String
      */
-    @Override public Long split(String source) throws SplitterException {
+    @Override
+    public Long split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
         result = removeSpecialCharacters(result);
 

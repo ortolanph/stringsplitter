@@ -14,11 +14,11 @@ class FieldSplitTest {
     @Test
     public void using() {
         FieldSplit<String> stringFieldSplit =
-            FieldSplit.newFieldSplit("field", StringSplit.newSplit(6, 21, WordCase.LOWER_CASE));
+                FieldSplit.newFieldSplit("field", StringSplit.newSplit(6, 21, WordCase.LOWER_CASE));
 
         assertAll(
-            () -> assertEquals("field", stringFieldSplit.getFieldName()),
-            () -> assertEquals("split this text", stringFieldSplit.split(DATA))
+                () -> assertEquals("field", stringFieldSplit.getFieldName()),
+                () -> assertEquals("split this text", stringFieldSplit.split(DATA))
         );
     }
 }

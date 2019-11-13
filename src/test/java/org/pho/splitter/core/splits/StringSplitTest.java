@@ -6,7 +6,8 @@ import org.pho.splitter.core.splits.features.WordCase;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("StringSplit Test") class StringSplitTest {
+@DisplayName("StringSplit Test")
+class StringSplitTest {
 
     private static final String DATA = "---StringSPLITtestArea    ";
 

@@ -12,16 +12,11 @@ public class LocalDateSplit extends AbstractSplitter<LocalDate> {
 
     private DateTimeFormatter formatter;
 
-    private LocalDateSplit(int start) {
-        super(start, END_OF_LINE);
-    }
-
     private LocalDateSplit(int start, int end) {
         super(start, end);
     }
 
     /**
-     *
      * @param start
      * @param end
      * @return
@@ -31,7 +26,7 @@ public class LocalDateSplit extends AbstractSplitter<LocalDate> {
     }
 
     public static LocalDateSplit newLocalDateSplit(int start) {
-        return new LocalDateSplit(start);
+        return new LocalDateSplit(start, END_OF_LINE);
     }
 
     public static LocalDateSplit newLocalDateSplit(int start, int end, DateTimeFormatter formatter) {
@@ -46,8 +41,9 @@ public class LocalDateSplit extends AbstractSplitter<LocalDate> {
 
     @Override
     public LocalDate split(String source) throws SplitterException {
-        return (formatter == null) ?
-                LocalDate.parse(source.substring(getStart(), getEnd())) :
-                LocalDate.parse(source.substring(getStart(), getEnd()), formatter);
+        String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
+        result = removeSpecialCharacters(result);
+
+        return (formatter == null) ? LocalDate.parse(result) : LocalDate.parse(result, formatter);
     }
 }

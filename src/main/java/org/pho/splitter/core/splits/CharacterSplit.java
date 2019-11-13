@@ -27,7 +27,8 @@ public class CharacterSplit extends AbstractSplitter<Character> {
      * @param source the String source
      * @return a Character converted from a String
      */
-    @Override public Character split(String source) {
+    @Override
+    public Character split(String source) {
         String result = source.substring(getStart(), getEnd());
         return result.toCharArray()[0];
     }

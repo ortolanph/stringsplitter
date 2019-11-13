@@ -22,10 +22,10 @@ public class StringSplit extends AbstractSplitter<String> {
     /**
      * Adds a String conversion into a String.
      *
-     * @param start where the split starts
-     * @param end where the split ends
+     * @param start    where the split starts
+     * @param end      where the split ends
      * @param wordCase the WordCase
-     * @param trimmed trim or not trim the final String
+     * @param trimmed  trim or not trim the final String
      * @return an instance of StringSplit
      * @see WordCase
      */
@@ -36,8 +36,8 @@ public class StringSplit extends AbstractSplitter<String> {
     /**
      * Adds a String conversion into a String.
      *
-     * @param start where the split starts
-     * @param end where the split ends
+     * @param start    where the split starts
+     * @param end      where the split ends
      * @param wordCase the WordCase
      * @return an instance of StringSplit
      */
@@ -48,8 +48,8 @@ public class StringSplit extends AbstractSplitter<String> {
     /**
      * Adds a String conversion into a String.
      *
-     * @param start where the split starts
-     * @param end where the split ends
+     * @param start   where the split starts
+     * @param end     where the split ends
      * @param trimmed trim or not trim the final String
      * @return an instance of StringSplit
      */
@@ -61,7 +61,7 @@ public class StringSplit extends AbstractSplitter<String> {
      * Adds a String conversion into a String.
      *
      * @param start where the split starts
-     * @param end where the split ends
+     * @param end   where the split ends
      * @return an instance of StringSplit
      */
     public static StringSplit newSplit(int start, int end) {
@@ -71,9 +71,9 @@ public class StringSplit extends AbstractSplitter<String> {
     /**
      * Adds a String conversion into a String.
      *
-     * @param start where the split starts
+     * @param start    where the split starts
      * @param wordCase the WordCase
-     * @param trimmed trim or not trim the final String
+     * @param trimmed  trim or not trim the final String
      * @return an instance of StringSplit
      * @see WordCase
      */
@@ -84,7 +84,7 @@ public class StringSplit extends AbstractSplitter<String> {
     /**
      * Adds a String conversion into a String.
      *
-     * @param start where the split starts
+     * @param start    where the split starts
      * @param wordCase the WordCase
      * @return an instance of StringSplit
      * @see WordCase
@@ -96,7 +96,7 @@ public class StringSplit extends AbstractSplitter<String> {
     /**
      * Adds a String conversion into a String.
      *
-     * @param start where the split starts
+     * @param start   where the split starts
      * @param trimmed trim or not trim the final String
      * @return an instance of StringSplit
      */
@@ -120,7 +120,8 @@ public class StringSplit extends AbstractSplitter<String> {
      * @param source the String source
      * @return a String extracted from the source String
      */
-    @Override public String split(String source) {
+    @Override
+    public String split(String source) {
         String result = (hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart());
         result = (trimmed) ? result.trim() : result;
         return wordCase.apply(result);

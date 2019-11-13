@@ -8,7 +8,7 @@ import org.pho.splitter.core.function.SplitFunction;
  * @param <T> The base type to be returned
  * @author Paulo Henrique Ortolan
  */
-public abstract class   AbstractSplitter<T> implements SplitFunction<T> {
+public abstract class AbstractSplitter<T> implements SplitFunction<T> {
 
     /**
      * Means to the end of the line.
@@ -26,8 +26,8 @@ public abstract class   AbstractSplitter<T> implements SplitFunction<T> {
     /**
      * Creates a new AbstractSplitter.
      *
-     * @param start where the split starts
-     * @param end where the split ends
+     * @param start             where the split starts
+     * @param end               where the split ends
      * @param specialCharacters the special character to be removed
      */
     public AbstractSplitter(int start, int end, String... specialCharacters) {
@@ -72,7 +72,7 @@ public abstract class   AbstractSplitter<T> implements SplitFunction<T> {
     public String removeSpecialCharacters(String source) {
         String result = source;
 
-        if(specialCharacters != null) {
+        if (specialCharacters != null) {
             for (String specialCharacter : specialCharacters) {
                 result = result.replaceAll(specialCharacter, NOTHING);
             }

@@ -17,7 +17,7 @@ public class ByteSplit extends AbstractSplitter<Byte> {
      * Adds a String conversion into a Byte.
      *
      * @param start where the split starts
-     * @param end where the split ends
+     * @param end   where the split ends
      * @return an instance of ByteSplit
      */
     public static ByteSplit newByteSplit(int start, int end) {
@@ -40,7 +40,8 @@ public class ByteSplit extends AbstractSplitter<Byte> {
      * @param source the String source
      * @return a Byte converted from a String
      */
-    @Override public Byte split(String source) throws SplitterException {
+    @Override
+    public Byte split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
 
         try {

@@ -12,7 +12,7 @@ import org.pho.splitter.core.exception.SplitterException;
 public interface SplitFunction<R> {
 
     /**
-     *  Split the String source according to the Splitter construct.
+     * Split the String source according to the Splitter construct.
      *
      * @param source the String source
      * @return the value of type R splitted from source
