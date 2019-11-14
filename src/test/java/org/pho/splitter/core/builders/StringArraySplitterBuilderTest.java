@@ -2,7 +2,7 @@ package org.pho.splitter.core.builders;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.pho.splitter.core.splits.features.WordCase;
+import org.pho.splitter.core.splits.string.features.WordCase;
 
 import java.util.ArrayList;
 import java.util.Arrays;

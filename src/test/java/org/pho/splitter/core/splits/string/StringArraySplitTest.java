@@ -1,4 +1,4 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.string;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

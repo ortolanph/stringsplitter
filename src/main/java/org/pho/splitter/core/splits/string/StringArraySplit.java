@@ -1,4 +1,6 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.string;
+
+import org.pho.splitter.core.splits.AbstractSplitter;
 
 import java.util.ArrayList;
 import java.util.List;

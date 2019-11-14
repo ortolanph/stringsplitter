@@ -1,8 +1,8 @@
 package org.pho.splitter.core.builders;
 
-import org.pho.splitter.core.splits.StringArraySplit;
-import org.pho.splitter.core.splits.StringSplit;
-import org.pho.splitter.core.splits.features.WordCase;
+import org.pho.splitter.core.splits.string.StringArraySplit;
+import org.pho.splitter.core.splits.string.StringSplit;
+import org.pho.splitter.core.splits.string.features.WordCase;
 
 /**
  * Builder to create String Array Splitter.

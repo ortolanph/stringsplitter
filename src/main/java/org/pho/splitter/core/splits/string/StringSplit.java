@@ -1,6 +1,7 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.string;
 
-import org.pho.splitter.core.splits.features.WordCase;
+import org.pho.splitter.core.splits.AbstractSplitter;
+import org.pho.splitter.core.splits.string.features.WordCase;
 
 /**
  * Converts a String split into a <strong>String</strong>.

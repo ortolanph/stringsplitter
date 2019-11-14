@@ -1,30 +1,31 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.primitives;
 
 import org.pho.splitter.core.exception.SplitterException;
+import org.pho.splitter.core.splits.AbstractSplitter;
 
 /**
- * Converts a String split into a <strong>Short</strong>.
+ * Converts a String split into a <strong>Long</strong>.
  *
  * @author Paulo Henrique Ortolan
  */
-public class ShortSplit extends AbstractSplitter<Short> {
+public class LongSplit extends AbstractSplitter<Long> {
 
     private String[] specialCharacters;
 
-    private ShortSplit(int start, int end, String... specialCharacters) {
+    private LongSplit(int start, int end, String... specialCharacters) {
         super(start, end, specialCharacters);
     }
 
     /**
-     * Adds a String conversion into a Short.
+     * Adds a String conversion into a Long.
      *
      * @param start             start where the split starts
      * @param end               end end where the split ends
      * @param specialCharacters special characters to be removed
-     * @return an instance of ShortSplit
+     * @return an instance of LongSplit
      */
-    public static ShortSplit newShortSplit(int start, int end, String... specialCharacters) {
-        return new ShortSplit(start, end, specialCharacters);
+    public static LongSplit newLongSplit(int start, int end, String... specialCharacters) {
+        return new LongSplit(start, end, specialCharacters);
     }
 
     /**
@@ -32,26 +33,26 @@ public class ShortSplit extends AbstractSplitter<Short> {
      *
      * @param start             start where the split starts
      * @param specialCharacters special characters to be removed
-     * @return an instance of ShortSplit
+     * @return an instance of LongSplit
      */
-    public static ShortSplit newShortSplit(int start, String... specialCharacters) {
-        return new ShortSplit(start, END_OF_LINE, specialCharacters);
+    public static LongSplit newLongSplit(int start, String... specialCharacters) {
+        return new LongSplit(start, END_OF_LINE, specialCharacters);
     }
 
     /**
-     * Splits the String source into a short.
+     * Splits the String source into a long.
      *
      * @param source the String source
-     * @return a Short converted from a String
-     * @throws SplitterException a Short converted from a String
+     * @return a Long converted from a String
+     * @throws SplitterException a Long converted from a String
      */
     @Override
-    public Short split(String source) throws SplitterException {
+    public Long split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
         result = removeSpecialCharacters(result);
 
         try {
-            return Short.valueOf(result.trim());
+            return Long.valueOf(result.trim());
         } catch (Exception e) {
             throw new SplitterException(e.getMessage(), e);
         }

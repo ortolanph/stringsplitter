@@ -1,8 +1,9 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.dates;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.pho.splitter.core.exception.SplitterException;
+import org.pho.splitter.core.splits.dates.LocalDateSplit;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -10,12 +11,11 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.SignStyle;
 import java.time.temporal.ChronoField;
-import java.time.temporal.TemporalField;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("DateSplit Test")
-public class LocalDateSplitTest {
+@DisplayName("LocalDateSplit Test")
+class LocalDateSplitTest {
 
     private static final String DATA_1 = "1977-12-1414/12/1977";
 

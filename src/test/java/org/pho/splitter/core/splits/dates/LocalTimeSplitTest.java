@@ -1,24 +1,21 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.dates;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.pho.splitter.core.exception.SplitterException;
+import org.pho.splitter.core.splits.dates.LocalTimeSplit;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalAdjuster;
-import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("TimeSplit Test")
+@DisplayName("LocalTimeSplit Test")
 class LocalTimeSplitTest {
 
     private static final String DATA_1 = "00:40:00.1201:56:35 PM";
 
     private static final String DATA_2 = "01:56:35 PM00:40:00.12";
-
-    private static final char SEPARATOR = ':';
 
     private static final DateTimeFormatter OTHER_FORMAT = DateTimeFormatter
             .ofPattern("hh:mm:ss a");

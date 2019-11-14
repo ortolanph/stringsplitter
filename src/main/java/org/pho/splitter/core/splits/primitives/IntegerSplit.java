@@ -1,6 +1,7 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.primitives;
 
 import org.pho.splitter.core.exception.SplitterException;
+import org.pho.splitter.core.splits.AbstractSplitter;
 
 /**
  * Converts a String split into an <strong>Integer</strong>.

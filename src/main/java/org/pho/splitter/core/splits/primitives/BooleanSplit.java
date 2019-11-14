@@ -1,4 +1,6 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.primitives;
+
+import org.pho.splitter.core.splits.AbstractSplitter;
 
 import java.util.function.Function;
 

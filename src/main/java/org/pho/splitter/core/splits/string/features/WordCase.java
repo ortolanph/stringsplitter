@@ -1,4 +1,4 @@
-package org.pho.splitter.core.splits.features;
+package org.pho.splitter.core.splits.string.features;
 
 import java.util.function.Function;
 

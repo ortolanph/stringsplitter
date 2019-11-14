@@ -1,4 +1,6 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.primitives;
+
+import org.pho.splitter.core.splits.AbstractSplitter;
 
 /**
  * Converts a String split into a <strong>Character</strong>.

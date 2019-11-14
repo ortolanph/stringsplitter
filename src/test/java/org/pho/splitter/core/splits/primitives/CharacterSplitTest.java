@@ -1,7 +1,8 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.primitives;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.pho.splitter.core.splits.primitives.CharacterSplit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

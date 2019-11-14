@@ -1,8 +1,8 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.string;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.pho.splitter.core.splits.features.WordCase;
+import org.pho.splitter.core.splits.string.features.WordCase;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

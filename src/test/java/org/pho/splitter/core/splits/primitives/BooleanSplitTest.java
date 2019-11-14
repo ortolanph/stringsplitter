@@ -1,7 +1,8 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.primitives;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.pho.splitter.core.splits.primitives.BooleanSplit;
 
 import java.util.function.Function;
 

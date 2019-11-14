@@ -32,6 +32,8 @@ Implement splitters for date related objects.
   - [ ] Commit changes
 
 - [ ] **Other**
+  - [ ] Reorganize packages by primitives / Dates / others
+  - [ ] Write release notes
   - [ ] Reformat code
   - [ ] Code review
   - [ ] Update javadoc documentation
