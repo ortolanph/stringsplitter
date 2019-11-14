@@ -19,7 +19,7 @@ Implement splitters for date related objects.
 - [x] **LocalDateTime**
   - [x] Test
   - [x] Implementation
-  - [ ] Commit changes
+  - [x] Commit changes
 
 - [ ] **Date**
   - [ ] Test
