@@ -33,7 +33,7 @@ public class LocalDateSplitTest {
 
     @Test
     @DisplayName("Simple split")
-    public void localDateSimpleDateSplit() throws SplitterException {
+    public void localDateSimpleSplit() throws SplitterException {
         LocalDate actual = LocalDateSplit.newLocalDateSplit(0, 10).split(DATA_1);
         LocalDate expected = LocalDate.of(1977, Month.DECEMBER, 14);
         assertEquals(expected, actual);
@@ -41,7 +41,7 @@ public class LocalDateSplitTest {
 
     @Test
     @DisplayName("Simple split at the end")
-    public void localDateSimpleDateSplitAtEnd() throws SplitterException {
+    public void localDateSimpleSplitAtEnd() throws SplitterException {
         LocalDate actual = LocalDateSplit.newLocalDateSplit(10).split(DATA_2);
         LocalDate expected = LocalDate.of(1977, Month.DECEMBER, 14);
         assertEquals(expected, actual);
