@@ -3,7 +3,6 @@ package org.pho.splitter.core.splits.dates;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.pho.splitter.core.exception.SplitterException;
-import org.pho.splitter.core.splits.dates.LocalDateSplit;
 
 import java.time.LocalDate;
 import java.time.Month;

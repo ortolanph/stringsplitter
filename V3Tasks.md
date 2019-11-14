@@ -16,9 +16,9 @@ Implement splitters for date related objects.
   - [x] Implementation
   - [x] Commit changes
 
-- [ ] **LocalDateTime**
-  - [ ] Test
-  - [ ] Implementation
+- [x] **LocalDateTime**
+  - [x] Test
+  - [x] Implementation
   - [ ] Commit changes
 
 - [ ] **Date**
@@ -32,7 +32,7 @@ Implement splitters for date related objects.
   - [ ] Commit changes
 
 - [ ] **Other**
-  - [ ] Reorganize packages by primitives / Dates / others
+  - [x] Reorganize packages by primitives / Dates / others
   - [ ] Write release notes
   - [ ] Reformat code
   - [ ] Code review

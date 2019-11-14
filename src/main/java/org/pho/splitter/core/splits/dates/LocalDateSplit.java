@@ -1,4 +1,4 @@
-package org.pho.splitter.coreorg.pho.splitter.core.splits.dates.splits.dates;
+package org.pho.splitter.core.splits.dates;
 
 import org.pho.splitter.core.exception.SplitterException;
 import org.pho.splitter.core.splits.AbstractSplitter;

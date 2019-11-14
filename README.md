@@ -11,6 +11,15 @@ A String splitter util for Java.
 
 Java 8 or later.
 
+## Release Notes
+
+### V3
+
+ * Organized packages into primitives, dates and string
+ * Implemented LocalDate splitter
+ * Implemented LocalTime splitter
+ * Implemented LocalDateTime splitter
+ 
 ## How to use
 
 ### Splitting Strings
