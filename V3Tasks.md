@@ -2,7 +2,9 @@
 
 ## Purpose of the version
 
-Implement splitters for date related objects.
+ * Implement splitters for date related objects.
+ * Reorganize packages
+ * Code Review
 
 ## Task list
 
@@ -22,11 +24,13 @@ Implement splitters for date related objects.
   - [x] Commit changes
 
 - [ ] **Date**
+  - [x] POC
   - [ ] Test
   - [ ] Implementation
   - [ ] Commit changes
 
 - [ ] **Calendar**
+  - [x] POC
   - [ ] Test
   - [ ] Implementation
   - [ ] Commit changes
