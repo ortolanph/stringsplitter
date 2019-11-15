@@ -1,35 +1,53 @@
 package org.pho.splitter.core.splits.dates;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.pho.splitter.core.exception.SplitterException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CalendarSplitTest {
 
+    private static final String DATA_1 = "14/11/2019 14:24:171573741457000";
+
+    private static final String DATA_2 = "157374145700014/11/2019 14:24:17";
+
+    private static final SimpleDateFormat FORMAT = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
     @Test
-    @Disabled
-    @DisplayName("Dummy test")
-    public void dummyTest() throws ParseException {
-        Calendar calendar = new GregorianCalendar();
+    @DisplayName("Calendar Formatted Input")
+    public void calendarSplitFormattedInput() throws SplitterException, ParseException {
+        Calendar actual = CalendarSplit.fromFormatted(0, 19, FORMAT).split(DATA_1);
+        Calendar expected = new GregorianCalendar(2019, Calendar.NOVEMBER, 14, 14, 24, 17);
+        assertEquals(expected, actual);
+    }
 
-        System.out.println(calendar.getTime().toString());
-        System.out.println(calendar.getTimeInMillis());
+    @Test
+    @DisplayName("Calendar Formatted Input")
+    public void calendarSplitFormattedInputAtEnd() throws SplitterException {
+        Calendar actual = CalendarSplit.fromFormatted(13, FORMAT).split(DATA_2);
+        Calendar expected = new GregorianCalendar(2019, Calendar.NOVEMBER, 14, 14, 24, 17);
+        assertEquals(expected, actual);
+    }
 
-        Calendar calendar0 = Calendar.getInstance();
-        calendar0.setTimeInMillis(1573742407197L);
-        System.out.println(calendar0.getTime().toString());
+    @Test
+    @DisplayName("Calendar Long Input")
+    public void calendarSplitLongInput() throws SplitterException {
+        Calendar actual = CalendarSplit.fromTime(0, 13).split(DATA_2);
+        Calendar expected = new GregorianCalendar(2019, Calendar.NOVEMBER, 14, 14, 24, 17);
+        assertEquals(expected, actual);
+    }
 
-        String myDate = "14/11/2019 14:24:17";
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = sdf.parse(myDate);
-        Calendar calendar1 = Calendar.getInstance();
-        calendar1.setTime(date);
-        System.out.println(calendar1.getTime().toString());
+    @Test
+    @DisplayName("Calendar Long Input")
+    public void calendarSplitLongInputAtEnd() throws SplitterException {
+        Calendar actual = CalendarSplit.fromTime(19).split(DATA_1);
+        Calendar expected = new GregorianCalendar(2019, Calendar.NOVEMBER, 14, 14, 24, 17);
+        assertEquals(expected, actual);
     }
 }

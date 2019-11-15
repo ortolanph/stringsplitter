@@ -23,17 +23,17 @@
   - [x] Implementation
   - [x] Commit changes
 
-- [ ] **Date**
+- [x] **Date**
   - [x] POC
-  - [ ] Test
-  - [ ] Implementation
-  - [ ] Commit changes
+  - [x] Test
+  - [x] Implementation
+  - [x] Commit changes
 
-- [ ] **Calendar**
+- [x] **Calendar**
   - [x] POC
-  - [ ] Test
-  - [ ] Implementation
-  - [ ] Commit changes
+  - [x] Test
+  - [x] Implementation
+  - [x] Commit changes
 
 - [ ] **Other**
   - [x] Reorganize packages by primitives / Dates / others

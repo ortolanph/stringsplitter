@@ -3,9 +3,9 @@ package org.pho.splitter.core.splits.primitives;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.pho.splitter.core.exception.SplitterException;
-import org.pho.splitter.core.splits.primitives.IntegerSplit;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class IntegerSplitTest {
 

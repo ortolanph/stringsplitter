@@ -23,7 +23,7 @@ class LocalDateSplitTest {
     private static final char SEPARATOR = '/';
 
     private static final DateTimeFormatter OTHER_FORMAT = new DateTimeFormatterBuilder()
-            .appendValue(ChronoField.DAY_OF_MONTH,2)
+            .appendValue(ChronoField.DAY_OF_MONTH, 2)
             .appendLiteral(SEPARATOR)
             .appendValue((ChronoField.MONTH_OF_YEAR), 2)
             .appendLiteral(SEPARATOR)

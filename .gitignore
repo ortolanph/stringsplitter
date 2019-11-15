@@ -74,3 +74,4 @@ fabric.properties
 
 ## Operating system files
 nohup.out
+.attach_pid**

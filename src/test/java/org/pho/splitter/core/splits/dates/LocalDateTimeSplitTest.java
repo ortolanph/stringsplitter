@@ -26,7 +26,7 @@ class LocalDateTimeSplitTest {
     public void shouldSplitSimpleLocalDateTime() throws SplitterException {
         LocalDateTime actual = LocalDateTimeSplit.newLocalDateTimeSplit(0, 23).split(DATA_1);
         LocalDate localDate = LocalDate.of(2019, Month.NOVEMBER, 14);
-        LocalTime localTime = LocalTime.of(11,17,39, 49000000);
+        LocalTime localTime = LocalTime.of(11, 17, 39, 49000000);
         LocalDateTime expected = LocalDateTime.of(localDate, localTime);
         assertEquals(expected, actual);
     }
@@ -36,7 +36,7 @@ class LocalDateTimeSplitTest {
     public void shouldSplitSimpleLocalDateTimeAtEnd() throws SplitterException {
         LocalDateTime actual = LocalDateTimeSplit.newLocalDateTimeSplit(33).split(DATA_2);
         LocalDate localDate = LocalDate.of(2019, Month.NOVEMBER, 14);
-        LocalTime localTime = LocalTime.of(11,17,39, 49000000);
+        LocalTime localTime = LocalTime.of(11, 17, 39, 49000000);
         LocalDateTime expected = LocalDateTime.of(localDate, localTime);
         assertEquals(expected, actual);
     }
@@ -44,9 +44,9 @@ class LocalDateTimeSplitTest {
     @Test
     @DisplayName("LocalDateTimeSplit custom split")
     public void shouldSplitCustomLocalDateTime() throws SplitterException {
-        LocalDateTime actual = LocalDateTimeSplit.newLocalDateTimeSplit(0,33, OTHER_FORMAT ).split(DATA_2);
+        LocalDateTime actual = LocalDateTimeSplit.newLocalDateTimeSplit(0, 33, OTHER_FORMAT).split(DATA_2);
         LocalDate localDate = LocalDate.of(2019, Month.NOVEMBER, 14);
-        LocalTime localTime = LocalTime.of(11,17);
+        LocalTime localTime = LocalTime.of(11, 17);
         LocalDateTime expected = LocalDateTime.of(localDate, localTime);
         assertEquals(expected, actual);
     }
@@ -56,7 +56,7 @@ class LocalDateTimeSplitTest {
     public void shouldSplitCustomLocalDateTimeAtEnd() throws SplitterException {
         LocalDateTime actual = LocalDateTimeSplit.newLocalDateTimeSplit(23, OTHER_FORMAT).split(DATA_1);
         LocalDate localDate = LocalDate.of(2019, Month.NOVEMBER, 14);
-        LocalTime localTime = LocalTime.of(11,17);
+        LocalTime localTime = LocalTime.of(11, 17);
         LocalDateTime expected = LocalDateTime.of(localDate, localTime);
         assertEquals(expected, actual);
     }

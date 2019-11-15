@@ -2,11 +2,11 @@ package org.pho.splitter.core.splits.primitives;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.pho.splitter.core.splits.primitives.BooleanSplit;
 
 import java.util.function.Function;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BooleanSplitTest {
 

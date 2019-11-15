@@ -3,7 +3,6 @@ package org.pho.splitter.core.splits.dates;
 import org.pho.splitter.core.exception.SplitterException;
 import org.pho.splitter.core.splits.AbstractSplitter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
