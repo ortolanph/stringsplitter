@@ -38,7 +38,7 @@ class CalendarSplitTest {
     @Test
     @DisplayName("Calendar Long Input")
     public void calendarSplitLongInput() throws SplitterException {
-        Calendar actual = CalendarSplit.fromTime(0, 13).split(DATA_2);
+        Calendar actual = CalendarSplit.fromLong(0, 13).split(DATA_2);
         Calendar expected = new GregorianCalendar(2019, Calendar.NOVEMBER, 14, 14, 24, 17);
         assertEquals(expected, actual);
     }
@@ -46,7 +46,7 @@ class CalendarSplitTest {
     @Test
     @DisplayName("Calendar Long Input")
     public void calendarSplitLongInputAtEnd() throws SplitterException {
-        Calendar actual = CalendarSplit.fromTime(19).split(DATA_1);
+        Calendar actual = CalendarSplit.fromLong(19).split(DATA_1);
         Calendar expected = new GregorianCalendar(2019, Calendar.NOVEMBER, 14, 14, 24, 17);
         assertEquals(expected, actual);
     }

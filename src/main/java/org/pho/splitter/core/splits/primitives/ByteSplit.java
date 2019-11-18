@@ -40,6 +40,7 @@ public class ByteSplit extends AbstractSplitter<Byte> {
      *
      * @param source the String source
      * @return a Byte converted from a String
+     * @throws SplitterException when the conversion goes wrong
      */
     @Override
     public Byte split(String source) throws SplitterException {

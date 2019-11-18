@@ -44,7 +44,7 @@ public class LongSplit extends AbstractSplitter<Long> {
      *
      * @param source the String source
      * @return a Long converted from a String
-     * @throws SplitterException a Long converted from a String
+     * @throws SplitterException when the conversion goes wrong
      */
     @Override
     public Long split(String source) throws SplitterException {

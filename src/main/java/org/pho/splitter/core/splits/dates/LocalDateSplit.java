@@ -7,7 +7,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
+ * Converts a String split into a <strong>LocalDate</strong> object.
  *
+ * @author Paulo Henrique Ortolan
  */
 public class LocalDateSplit extends AbstractSplitter<LocalDate> {
 
@@ -26,20 +28,44 @@ public class LocalDateSplit extends AbstractSplitter<LocalDate> {
         return new LocalDateSplit(start, end);
     }
 
+    /**
+     *
+     * @param start
+     * @return
+     */
     public static LocalDateSplit newLocalDateSplit(int start) {
         return new LocalDateSplit(start, END_OF_LINE);
     }
 
-    public static LocalDateSplit newLocalDateSplit(int start, int end, DateTimeFormatter formatter) {
+    /**
+     *
+     * @param start
+     * @param end
+     * @param formatter
+     * @return
+     */
+    public static LocalDateSplit fromFormatted(int start, int end, DateTimeFormatter formatter) {
         LocalDateSplit localDateSplit = newLocalDateSplit(start, end);
         localDateSplit.formatter = formatter;
         return localDateSplit;
     }
 
-    public static LocalDateSplit newLocalDateSplit(int start, DateTimeFormatter formatter) {
-        return newLocalDateSplit(start, END_OF_LINE, formatter);
+    /**
+     *
+     * @param start
+     * @param formatter
+     * @return
+     */
+    public static LocalDateSplit fromFormatted(int start, DateTimeFormatter formatter) {
+        return fromFormatted(start, END_OF_LINE, formatter);
     }
 
+    /**
+     *
+     * @param source the String source
+     * @return
+     * @throws SplitterException
+     */
     @Override
     public LocalDate split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();

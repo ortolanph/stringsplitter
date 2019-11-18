@@ -17,9 +17,9 @@ public class IntegerSplit extends AbstractSplitter<Integer> {
     /**
      * Adds a String conversion into an Integer.
      *
-     * @param start             start where the split starts
-     * @param end               end end where the split ends
-     * @param specialCharacters special characters to be removed
+     * @param start             where the split starts
+     * @param end               where the split ends
+     * @param specialCharacters to be removed
      * @return an instance of IntegerSplit
      */
     public static IntegerSplit newIntegerSplit(int start, int end, String... specialCharacters) {
@@ -29,8 +29,8 @@ public class IntegerSplit extends AbstractSplitter<Integer> {
     /**
      * Adds a String conversion into an Integer.
      *
-     * @param start             start where the split starts
-     * @param specialCharacters special characters to be removed
+     * @param start             where the split starts
+     * @param specialCharacters to be removed
      * @return an instance of IntegerSplit
      */
     public static IntegerSplit newIntegerSplit(int start, String... specialCharacters) {
@@ -42,7 +42,7 @@ public class IntegerSplit extends AbstractSplitter<Integer> {
      *
      * @param source the String source
      * @return an Integer converted from a String
-     * @throws SplitterException an Integer converted from a String
+     * @throws SplitterException when the conversion goes wrong
      */
     @Override
     public Integer split(String source) throws SplitterException {

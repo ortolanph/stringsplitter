@@ -37,10 +37,20 @@
 
 - [ ] **Other**
   - [x] Reorganize packages by primitives / Dates / others
-  - [ ] Write release notes
-  - [ ] Reformat code
-  - [ ] Code review
+  - [x] Reformat code
+  - [x] Code review
   - [ ] Update javadoc documentation
-  - [ ] Update documentation
+    - [x] Calendar
+    - [x] Date
+    - [ ] LocalDateSplit
+    - [ ] LocalDateTimeSplit
+    - [ ] LocalTimeSplit
+  - [ ] Update pacakge documentation
+    - [ ] `dates` package
+    - [ ] `primitives` package
+    - [ ] `string` package
+    - [ ] `string.feature` package
+  - [ ] Update main page
+  - [ ] Write release notes
   - [ ] Merge with master
   - [ ] Create a JAR Release

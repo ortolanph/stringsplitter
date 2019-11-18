@@ -44,7 +44,7 @@ public class ShortSplit extends AbstractSplitter<Short> {
      *
      * @param source the String source
      * @return a Short converted from a String
-     * @throws SplitterException a Short converted from a String
+     * @throws SplitterException when the conversion goes wrong
      */
     @Override
     public Short split(String source) throws SplitterException {

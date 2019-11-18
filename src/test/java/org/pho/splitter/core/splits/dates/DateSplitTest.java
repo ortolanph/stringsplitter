@@ -30,7 +30,7 @@ class DateSplitTest {
 
     @Test
     @DisplayName("DateSplit Formatted Input at end")
-    public void dateSplitFormattedInputAtEnd() throws SplitterException, ParseException  {
+    public void dateSplitFormattedInputAtEnd() throws SplitterException, ParseException {
         Date actual = DateSplit.fromFormatted(13, FORMAT).split(DATA_2);
         Date expected = FORMAT.parse(MY_DATE);
         System.out.println(expected.getTime());

@@ -49,7 +49,7 @@ class LocalDateSplitTest {
     @Test
     @DisplayName("Test with a custom date format")
     public void localDateCustomizedFormat() throws SplitterException {
-        LocalDate actual = LocalDateSplit.newLocalDateSplit(0, 10, OTHER_FORMAT).split(DATA_2);
+        LocalDate actual = LocalDateSplit.fromFormatted(0, 10, OTHER_FORMAT).split(DATA_2);
         LocalDate expected = LocalDate.of(1977, Month.DECEMBER, 14);
         assertEquals(expected, actual);
     }
@@ -57,7 +57,7 @@ class LocalDateSplitTest {
     @Test
     @DisplayName("Test with a custom date format at end")
     public void localDateCustomizedFormatAtEnd() throws SplitterException {
-        LocalDate actual = LocalDateSplit.newLocalDateSplit(10, OTHER_FORMAT).split(DATA_1);
+        LocalDate actual = LocalDateSplit.fromFormatted(10, OTHER_FORMAT).split(DATA_1);
         LocalDate expected = LocalDate.of(1977, Month.DECEMBER, 14);
         assertEquals(expected, actual);
     }

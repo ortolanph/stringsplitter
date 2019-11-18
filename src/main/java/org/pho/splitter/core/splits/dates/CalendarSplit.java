@@ -8,6 +8,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Converts a String split into a <strong>Calendar</strong> object.
+ *
+ * @author Paulo Henrique Ortolan
+ */
 public class CalendarSplit extends AbstractSplitter<Calendar> {
 
     private SimpleDateFormat format;
@@ -16,26 +21,61 @@ public class CalendarSplit extends AbstractSplitter<Calendar> {
         super(start, end);
     }
 
+    /**
+     * Adds a String conversion into an Calendar from a formatted source.
+     *
+     * @param start  where the split starts
+     * @param end    where the split ends
+     * @param format the date format
+     * @return an instance of CalendarSplit
+     */
     public static CalendarSplit fromFormatted(int start, int end, SimpleDateFormat format) {
         CalendarSplit calendarSplit = new CalendarSplit(start, end);
         calendarSplit.format = format;
         return calendarSplit;
     }
 
+    /**
+     * Adds a String conversion into an Calendar from a formatted source.
+     *
+     * @param start  where the split starts
+     * @param format the date format
+     * @return an instance of CalendarSplit
+     */
     public static CalendarSplit fromFormatted(int start, SimpleDateFormat format) {
         CalendarSplit calendarSplit = new CalendarSplit(start, END_OF_LINE);
         calendarSplit.format = format;
         return calendarSplit;
     }
 
-    public static CalendarSplit fromTime(int start, int end) {
+    /**
+     * Adds a String conversion into an Calendar from a long value representing a date.
+     *
+     * @param start  where the split starts
+     * @param end    where the split ends
+     * @return an instance of CalendarSplit
+     */
+    public static CalendarSplit fromLong(int start, int end) {
         return new CalendarSplit(start, end);
     }
 
-    public static CalendarSplit fromTime(int start) {
+    /**
+     * Adds a String conversion into an Calendar from a long value representing a date.
+     *
+     * @param start  where the split starts
+     * @return an instance of CalendarSplit
+     */
+    public static CalendarSplit fromLong(int start) {
         return new CalendarSplit(start, END_OF_LINE);
     }
 
+    /**
+     * Splits the String source into an Calendar.
+     *
+     * @param source the String source
+     * @return a Calendar instance from a String
+     * @throws SplitterException when the conversion goes wrong
+     */
     @Override
     public Calendar split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
@@ -44,7 +84,7 @@ public class CalendarSplit extends AbstractSplitter<Calendar> {
 
         try {
             splitted = (format == null) ?
-                    convertTime(Long.valueOf(result)):
+                    convertTime(Long.valueOf(result)) :
                     convertString(result);
         } catch (ParseException e) {
             e.printStackTrace();

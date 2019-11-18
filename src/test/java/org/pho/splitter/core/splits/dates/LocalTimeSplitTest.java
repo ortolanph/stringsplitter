@@ -22,7 +22,7 @@ class LocalTimeSplitTest {
     @Test
     @DisplayName("Simple split")
     public void localTimeSimpleSplit() throws SplitterException {
-        LocalTime actual = LocalTimeSplit.newSplit(0, 11).split(DATA_1);
+        LocalTime actual = LocalTimeSplit.newLocalTimeSplit(0, 11).split(DATA_1);
         LocalTime expected = LocalTime.of(0, 40, 0, 120000000);
         assertEquals(expected, actual);
     }
@@ -38,7 +38,7 @@ class LocalTimeSplitTest {
     @Test
     @DisplayName("Test with a custom time format")
     public void localTimeCustomFormat() throws SplitterException {
-        LocalTime actual = LocalTimeSplit.newLocalTimeSplit(0, 11, OTHER_FORMAT).split(DATA_2);
+        LocalTime actual = LocalTimeSplit.fromFormatted(0, 11, OTHER_FORMAT).split(DATA_2);
         LocalTime expected = LocalTime.of(13, 56, 35);
         assertEquals(expected, actual);
     }
@@ -46,7 +46,7 @@ class LocalTimeSplitTest {
     @Test
     @DisplayName("Test with a custom time format")
     public void localTimeCustomFormatAtEnd() throws SplitterException {
-        LocalTime actual = LocalTimeSplit.newLocalTimeSplit(11, OTHER_FORMAT).split(DATA_1);
+        LocalTime actual = LocalTimeSplit.fromFormatted(11, OTHER_FORMAT).split(DATA_1);
         LocalTime expected = LocalTime.of(13, 56, 35);
         assertEquals(expected, actual);
     }

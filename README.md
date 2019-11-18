@@ -19,6 +19,10 @@ Java 8 or later.
  * Implemented LocalDate splitter
  * Implemented LocalTime splitter
  * Implemented LocalDateTime splitter
+ * Implemented Date splitter
+ * Implemented Calendar splitter
+ * Javadoc Documentation and other documentation fixed
+ * 
  
 ## How to use
 
