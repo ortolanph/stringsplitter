@@ -1,5 +1,3 @@
-package org.pho.splitter.core.splits;
-
 /**
  * Package where are located all the splits and features for all these splits.
  * <p>
@@ -8,3 +6,5 @@ package org.pho.splitter.core.splits;
  *
  * @author Paulo Henrique Ortolan
  */
+
+package org.pho.splitter.core.splits;

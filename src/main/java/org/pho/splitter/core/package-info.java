@@ -1,5 +1,3 @@
-package org.pho.splitter.core;
-
 /**
  * This project was built to easy the way that big strings with no separation marks
  * can be separated into an entity respecting their field types.
@@ -17,3 +15,4 @@ package org.pho.splitter.core;
  *
  * @author Paulo Henrique Ortolan
  */
+package org.pho.splitter.core;
