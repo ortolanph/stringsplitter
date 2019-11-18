@@ -35,7 +35,7 @@ public class DateSplit extends AbstractSplitter<Date> {
     }
 
     /**
-     * Adds a String conversion into an Calendar from a formatted source.
+     * Adds a String conversion into a Date from a formatted source.
      *
      * @param start  where the split starts
      * @param format the date format
@@ -46,7 +46,7 @@ public class DateSplit extends AbstractSplitter<Date> {
     }
 
     /**
-     * Adds a String conversion into an Calendar from a long value representing a date.
+     * Adds a String conversion into a Date from a long value representing a date.
      *
      * @param start  where the split starts
      * @param end    where the split ends

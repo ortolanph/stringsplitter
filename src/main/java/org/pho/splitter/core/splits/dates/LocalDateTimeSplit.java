@@ -1,6 +1,5 @@
 package org.pho.splitter.core.splits.dates;
 
-import org.pho.splitter.core.exception.SplitterException;
 import org.pho.splitter.core.splits.AbstractSplitter;
 
 import java.time.LocalDateTime;
@@ -13,67 +12,71 @@ import java.time.format.DateTimeFormatter;
  */
 public class LocalDateTimeSplit extends AbstractSplitter<LocalDateTime> {
 
-    private DateTimeFormatter formatter;
+    private DateTimeFormatter format;
 
     private LocalDateTimeSplit(int start, int end) {
         super(start, end);
     }
 
     /**
+     * Adds a String conversion into a LocalDateTime.
      *
-     * @param start
-     * @param end
-     * @return
+     * @param start  where the split starts
+     * @param end    where the split ends
+     * @return an instance of LocalDateSplit
      */
     public static LocalDateTimeSplit newLocalDateTimeSplit(int start, int end) {
         return new LocalDateTimeSplit(start, end);
     }
 
     /**
+     * Adds a String conversion into a LocalDateTime.
      *
-     * @param start
-     * @param end
-     * @param formatter
-     * @return
+     * @param start  where the split starts
+     * @return an instance of LocalDateSplit
      */
-    public static LocalDateTimeSplit newLocalDateTimeSplit(int start, int end, DateTimeFormatter formatter) {
-        LocalDateTimeSplit localDateTimeSplit = new LocalDateTimeSplit(start, end);
-        localDateTimeSplit.formatter = formatter;
-        return localDateTimeSplit;
-    }
-
-    /**
-     *
-     * @param start
-     * @return
-     */
-    public static LocalDateTimeSplit fromFormatted(int start) {
+    public static LocalDateTimeSplit newLocalDateTimeSplit(int start) {
         return new LocalDateTimeSplit(start, END_OF_LINE);
     }
 
     /**
+     * Adds a String conversion into a LocalDateTime from a formatted source.
      *
-     * @param start
-     * @param formatter
-     * @return
+     * @param start  where the split starts
+     * @param end    where the split ends
+     * @param format the date format
+     * @return an instance of LocalDateTimeSplit
      */
-    public static LocalDateTimeSplit fromFormatted(int start, DateTimeFormatter formatter) {
-        LocalDateTimeSplit localDateTimeSplit = new LocalDateTimeSplit(start, END_OF_LINE);
-        localDateTimeSplit.formatter = formatter;
+    public static LocalDateTimeSplit fromFormat(int start, int end, DateTimeFormatter format) {
+        LocalDateTimeSplit localDateTimeSplit = new LocalDateTimeSplit(start, end);
+        localDateTimeSplit.format = format;
         return localDateTimeSplit;
     }
 
     /**
+     * Adds a String conversion into a LocalDateTime from a formatted source.
+     *
+     * @param start  where the split starts
+     * @param format the date format
+     * @return an instance of LocalDateTimeSplit
+     */
+    public static LocalDateTimeSplit fromFormat(int start, DateTimeFormatter format) {
+        LocalDateTimeSplit localDateTimeSplit = new LocalDateTimeSplit(start, END_OF_LINE);
+        localDateTimeSplit.format = format;
+        return localDateTimeSplit;
+    }
+
+    /**
+     * Splits the String source into an LocalDateTime.
      *
      * @param source the String source
-     * @return
-     * @throws SplitterException
+     * @return a LocalDateTime instance from a String
      */
     @Override
-    public LocalDateTime split(String source) throws SplitterException {
+    public LocalDateTime split(String source) {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
         result = removeSpecialCharacters(result);
 
-        return (formatter == null) ? LocalDateTime.parse(result) : LocalDateTime.parse(result, formatter);
+        return (format == null) ? LocalDateTime.parse(result) : LocalDateTime.parse(result, format);
     }
 }

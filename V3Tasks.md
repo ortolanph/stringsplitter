@@ -39,12 +39,12 @@
   - [x] Reorganize packages by primitives / Dates / others
   - [x] Reformat code
   - [x] Code review
-  - [ ] Update javadoc documentation
+  - [x] Update javadoc documentation
     - [x] Calendar
     - [x] Date
-    - [ ] LocalDateSplit
-    - [ ] LocalDateTimeSplit
-    - [ ] LocalTimeSplit
+    - [x] LocalDateSplit
+    - [x] LocalDateTimeSplit
+    - [x] LocalTimeSplit
   - [ ] Update pacakge documentation
     - [ ] `dates` package
     - [ ] `primitives` package

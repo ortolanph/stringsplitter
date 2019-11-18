@@ -49,7 +49,7 @@ public class CalendarSplit extends AbstractSplitter<Calendar> {
     }
 
     /**
-     * Adds a String conversion into an Calendar from a long value representing a date.
+     * Adds a String conversion into a Calendar from a long value representing a date.
      *
      * @param start  where the split starts
      * @param end    where the split ends
@@ -60,7 +60,7 @@ public class CalendarSplit extends AbstractSplitter<Calendar> {
     }
 
     /**
-     * Adds a String conversion into an Calendar from a long value representing a date.
+     * Adds a String conversion into a Calendar from a long value representing a date.
      *
      * @param start  where the split starts
      * @return an instance of CalendarSplit
