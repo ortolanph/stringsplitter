@@ -46,10 +46,10 @@
     - [x] LocalDateTimeSplit
     - [x] LocalTimeSplit
   - [ ] Update pacakge documentation
-    - [ ] `dates` package
+    - [x] `dates` package
     - [ ] `primitives` package
     - [ ] `string` package
-    - [ ] `string.feature` package
+    - [x] `string.feature` package
   - [ ] Update main page
   - [ ] Write release notes
   - [ ] Merge with master
