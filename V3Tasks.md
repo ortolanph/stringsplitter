@@ -35,7 +35,7 @@
   - [x] Implementation
   - [x] Commit changes
 
-- [ ] **Other**
+- [x] **Other**
   - [x] Reorganize packages by primitives / Dates / others
   - [x] Reformat code
   - [x] Code review
