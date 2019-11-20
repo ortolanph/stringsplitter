@@ -17,15 +17,16 @@
   - [ ] Implementation
   - [ ] Commit changes
  
- - [ ] **Other**
-   - [ ] Reformat code
-   - [ ] Code review
-   - [ ] Update javadoc documentation
-     - [ ] Calendar
-     - [ ] Date
-   - [ ] Update pacakge documentation
-     - [ ] `primitives` package
-   - [ ] Update main page
-   - [ ] Write release notes
-   - [ ] Merge with master
-   - [ ] Create a JAR Release
+- [ ] **Other**
+  - [x] Change version in `pom.xml`
+  - [ ] Reformat code
+  - [ ] Code review
+  - [ ] Update javadoc documentation
+    - [ ] Calendar
+    - [ ] Date
+  - [ ] Update pacakge documentation
+    - [ ] `primitives` package
+  - [ ] Update main page
+  - [ ] Write release notes
+  - [ ] Merge with master
+  - [ ] Create a JAR Release
