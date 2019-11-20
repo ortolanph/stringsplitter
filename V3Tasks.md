@@ -52,5 +52,5 @@
     - [x] `string.feature` package
   - [x] Update main page
   - [x] Write release notes
-  - [ ] Merge with master
-  - [ ] Create a JAR Release
+  - [x] Merge with master
+  - [x] Create a JAR Release

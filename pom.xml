@@ -40,7 +40,7 @@
     </dependencies>
 
     <build>
-        <finalName>stringsplitter</finalName>
+        <finalName>stringsplitter-${version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
