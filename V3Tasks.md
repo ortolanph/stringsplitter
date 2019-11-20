@@ -45,12 +45,12 @@
     - [x] LocalDateSplit
     - [x] LocalDateTimeSplit
     - [x] LocalTimeSplit
-  - [ ] Update pacakge documentation
+  - [x] Update pacakge documentation
     - [x] `dates` package
-    - [ ] `primitives` package
-    - [ ] `string` package
+    - [x] `primitives` package
+    - [x] `string` package
     - [x] `string.feature` package
-  - [ ] Update main page
-  - [ ] Write release notes
+  - [x] Update main page
+  - [x] Write release notes
   - [ ] Merge with master
   - [ ] Create a JAR Release

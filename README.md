@@ -22,7 +22,8 @@ Java 8 or later.
  * Implemented Date splitter
  * Implemented Calendar splitter
  * Javadoc Documentation and other documentation fixed
- * 
+ * Updated Javadoc documentation for packages
+ * Updated this page with date examples
  
 ## How to use
 
@@ -85,7 +86,9 @@ List<String> result =
 ```
 
 
-### Splitting Booleans
+### Wrappers
+
+#### Splitting Booleans
 
 ```java
 String data = "FAILED SUCCESS";
@@ -108,7 +111,7 @@ boolean hasCompleted = booleanSplit.split(data);
 
 ```
 
-### Splitting Bytes
+#### Splitting Bytes
 
 ```java
 String data = "textfile.txt  40KB";
@@ -119,7 +122,7 @@ byte fileSizeInKB = byteSplit.split(data);
 
 ```
 
-### Splitting Characters
+#### Splitting Characters
 
 ```java
 String data = "↑↑↓↓←→←→BA";
@@ -129,7 +132,7 @@ CharacterSplit characterSplit = CharacterSplit.newCharacterSplit(1);
 char direction = characterSplit.split(data);
 ```
 
-### Splitting Shorts
+#### Splitting Shorts
 
 ```java
 String data = "BANK BRAND25892";
@@ -139,7 +142,7 @@ ShortSplit shortSplit = ShortSplit.newShortSplit(10, 14);
 short agencyNumber = shortSplit.split(data);
 ```
 
-### Splitting Integers
+#### Splitting Integers
 
 ```java
 String data = "FANCY LAPTOP i7     2,300";
@@ -149,7 +152,7 @@ IntegerSplit split = IntegerSplit.newIntegerSplit(20, ",");
 int productPrice = split.split(data);
 ```
 
-### Splitting Longs
+#### Splitting Longs
 
 ```java
 String data = "EARTH     149600000"
@@ -157,6 +160,142 @@ String data = "EARTH     149600000"
 LongSplit longSplit = LongSplit.newLongSplit(10);
 
 long distanceFromTheSun = longSplit.split(data);
+
+```
+
+### Dates
+
+#### Date
+
+Without format:
+
+```java
+String data = "157374145700014/11/2019 14:24:17"
+
+DateSplit dateSplit = DateSplit.fromLong(0, 13);
+
+Date dateRecorded = dateSplit.split(data);
+
+```
+With format:
+
+```java
+String data = "157374145700014/11/2019 14:24:17"
+
+SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+DateSplit dateSplit = DateSplit.fromFormatted(13, format);
+
+Date dateRecorded = dateSplit.split(data);
+
+```
+
+#### Calendar
+
+Without format:
+
+```java
+String data = "157374145700014/11/2019 14:24:17"
+
+CalendarSplit dateSplit = CalendarSplit.fromLong(0, 13);
+
+Date dateRecorded = dateSplit.split(data);
+
+```
+With format:
+
+```java
+String data = "157374145700014/11/2019 14:24:17"
+
+SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+CalendarSplit dateSplit = CalendarSplit.fromFormatted(13, format);
+
+Date dateRecorded = dateSplit.split(data);
+
+```
+
+#### LocalDate
+
+Using the default format:
+
+```java
+String data = "14/12/19771977-12-14"
+
+LocalDateSplit localDateSplit = LocalDateSplit.newLocalDateSplit(10);
+
+LocalDate dateRecorded = localDateSplit.split(data);
+
+```
+
+Using a `DateTimeFormatter`:
+
+```java
+String data = "14/12/19771977-12-14"
+
+DateTimeFormatter format = new DateTimeFormatterBuilder()
+            .appendValue(ChronoField.DAY_OF_MONTH, 2)
+            .appendLiteral('/')
+            .appendValue((ChronoField.MONTH_OF_YEAR), 2)
+            .appendLiteral('/')
+            .appendValue(ChronoField.YEAR, 2, 4, SignStyle.NEVER)
+            .toFormatter();
+
+LocalDateSplit localDateSplit = LocalDateSplit.fromFormatted(0, 10, format).split(data);
+
+LocalDate dateRecorded = localDateSplit.split(data);
+
+```
+
+#### LocalTime
+
+Using the default format:
+
+```java
+String data = "01:56:35 PM00:40:00.12"
+
+LocalTimeSplit localTimeSplit = LocalTimeSplit.newLocalTimeSplit(11);
+
+LocalTime timeRecorded = localTimeSplit.split(data);
+
+```
+
+Using a `DateTimeFormatter`:
+
+```java
+String data = "01:56:35 PM00:40:00.12"
+
+DateTimeFormatter format = DateTimeFormatter.ofPattern("hh:mm:ss a");
+
+LocalTimeSplit localTimeSplit = LocalTimeSplit.fromFormatted(0, 11, format);
+
+LocalTime timeRecorded = localTimeSplit.split(data);
+
+```
+
+#### LocalDateTime
+
+Using the default format:
+
+```java
+String data = "Thursday, 14 November 2019, 11:172019-11-14T11:17:39.049"
+
+LocalDateTimeSplit localDateTimeSplit = LocalDateTimeSplit.newLocalDateTimeSplit(33);
+
+LocalDateTime timestampRecorded = LocalDateTimeSplit.split(data);
+
+```
+
+Using a `DateTimeFormatter`:
+
+```java
+String data = "Thursday, 14 November 2019, 11:172019-11-14T11:17:39.049"
+
+DateTimeFormatter format = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy, HH:mm");
+
+LocalDateTimeSplit localDateTimeSplit = LocalDateTimeSplit.newLocalDateTimeSplit(0, 33, format);
+
+LocalDateTime timestampRecorded = LocalDateTimeSplit.split(data);
 
 ```
 
@@ -169,9 +308,9 @@ The following table shows the plans to evolve the framework:
 | 1 | Framework architecture | Implemented | |
 | 2 | StringSplit, StringArraySplit, CharacterSplit, ByteSplit, ShortSplit, IntegerSplit, LongSplit | Implemented | |
 | 3 | LocalDateSplit, LocalTimeSplit, LocalDateTimeSplit, DateSplit and CalendarSplit | Under development | [Tasks](V3Tasks.md) | 
-| 4 | FloatSplit, DoubleSplit, EntityBuilder update | To Be Implemented | |
+| 4 | FloatSplit and DoubleSplit | To Be Implemented | |
 | 5 | Studies on reflections, EntityBuilder and FieldSplit | To Be Implemented | |
-| 6 | Annotations and Annotations Processing | To Be Defined | |
+| 6 | Studies on annotations and annotation processing. Annotations and Annotations Processing | To Be Defined | |
 | 7 | Maven central plans | To Be Defined | |
 
 ## Reference
