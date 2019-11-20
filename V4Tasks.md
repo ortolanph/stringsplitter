@@ -22,8 +22,8 @@
   - [ ] Reformat code
   - [ ] Code review
   - [ ] Update javadoc documentation
-    - [ ] Calendar
-    - [ ] Date
+    - [ ] FloatSplit
+    - [ ] DoubleSplit
   - [ ] Update pacakge documentation
     - [ ] `primitives` package
   - [ ] Update main page
