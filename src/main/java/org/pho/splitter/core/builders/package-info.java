@@ -1,5 +1,3 @@
-package org.pho.splitter.core.builders;
-
 /**
  * This package contains the builders.
  *
@@ -7,3 +5,4 @@ package org.pho.splitter.core.builders;
  *
  * @author Paulo Henrique Ortolan
  */
+package org.pho.splitter.core.builders;

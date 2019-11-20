@@ -1,11 +1,12 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.primitives;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.function.Function;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BooleanSplitTest {
 
@@ -18,13 +19,13 @@ class BooleanSplitTest {
     private static final String VERDADEIRO_FALSO_DATA = "verdadeirofalso";
 
     private static final Function<String, Boolean> TRUE_FALSE_FUNCTION =
-        source -> (source.trim().toLowerCase().equals("true"))? Boolean.TRUE : Boolean.FALSE;
+            source -> (source.trim().toLowerCase().equals("true")) ? Boolean.TRUE : Boolean.FALSE;
 
     private static final Function<String, Boolean> ONE_ZERO_FUNCTION =
-        source -> (source.equals("1"))? Boolean.TRUE : Boolean.FALSE;
+            source -> (source.equals("1")) ? Boolean.TRUE : Boolean.FALSE;
 
     private static final Function<String, Boolean> VERDADEIRO_FALSO_FUNCTION =
-        source -> (source.trim().toLowerCase().equals("verdadeiro"))? Boolean.TRUE : Boolean.FALSE;
+            source -> (source.trim().toLowerCase().equals("verdadeiro")) ? Boolean.TRUE : Boolean.FALSE;
 
     @Test
     @DisplayName("Boolean split true test")

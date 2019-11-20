@@ -1,6 +1,7 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.primitives;
 
 import org.pho.splitter.core.exception.SplitterException;
+import org.pho.splitter.core.splits.AbstractSplitter;
 
 /**
  * Converts a String split into a <strong>Short</strong>.
@@ -18,8 +19,8 @@ public class ShortSplit extends AbstractSplitter<Short> {
     /**
      * Adds a String conversion into a Short.
      *
-     * @param start start where the split starts
-     * @param end end end where the split ends
+     * @param start             start where the split starts
+     * @param end               end end where the split ends
      * @param specialCharacters special characters to be removed
      * @return an instance of ShortSplit
      */
@@ -30,7 +31,7 @@ public class ShortSplit extends AbstractSplitter<Short> {
     /**
      * Adds a String conversion into a Long.
      *
-     * @param start start where the split starts
+     * @param start             start where the split starts
      * @param specialCharacters special characters to be removed
      * @return an instance of ShortSplit
      */
@@ -43,9 +44,10 @@ public class ShortSplit extends AbstractSplitter<Short> {
      *
      * @param source the String source
      * @return a Short converted from a String
-     * @throws SplitterException a Short converted from a String
+     * @throws SplitterException when the conversion goes wrong
      */
-    @Override public Short split(String source) throws SplitterException {
+    @Override
+    public Short split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
         result = removeSpecialCharacters(result);
 

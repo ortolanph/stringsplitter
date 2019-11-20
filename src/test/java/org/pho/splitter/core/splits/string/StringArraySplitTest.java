@@ -1,4 +1,4 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.string;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +12,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@DisplayName("StringArraySplit test") class StringArraySplitTest {
+@DisplayName("StringArraySplit test")
+class StringArraySplitTest {
 
     private static final String DATA = "1STRING SPLITTER     JAVA8     POM       JAR       1.0.0   ";
 
@@ -48,14 +49,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
     @DisplayName("Testing the split method")
     public void splitTest() {
         List<String> expected =
-            new ArrayList<>(Arrays.asList(
-                "1",
-                "STRING SPLITTER     ",
-                "JAVA8     ",
-                "POM       ",
-                "JAR       ",
-                "1.0.0   "
-            ));
+                new ArrayList<>(Arrays.asList(
+                        "1",
+                        "STRING SPLITTER     ",
+                        "JAVA8     ",
+                        "POM       ",
+                        "JAR       ",
+                        "1.0.0   "
+                ));
 
         splitter.addSplit(StringSplit.newSplit(0, 1));
         splitter.addSplit(StringSplit.newSplit(1, 21));

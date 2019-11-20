@@ -1,4 +1,6 @@
-package org.pho.splitter.core.splits;
+package org.pho.splitter.core.splits.primitives;
+
+import org.pho.splitter.core.splits.AbstractSplitter;
 
 import java.util.function.Function;
 
@@ -19,8 +21,8 @@ public class BooleanSplit extends AbstractSplitter<Boolean> {
     /**
      * Adds a String conversion into a Boolean.
      *
-     * @param start where the split starts
-     * @param end where the split ends
+     * @param start              where the split starts
+     * @param end                where the split ends
      * @param conversionFunction the conversion function. It can convert a <code>0</code> to <code>false</code> and
      *                           <code>1</code> to <code>true</code>
      * @return an instance of BoooleanSplit
@@ -32,7 +34,7 @@ public class BooleanSplit extends AbstractSplitter<Boolean> {
     /**
      * Adds a String conversion into a Boolean.
      *
-     * @param start where the split starts
+     * @param start              where the split starts
      * @param conversionFunction the conversion function. It can convert a <code>0</code> to <code>false</code> and
      *                           <code>1</code> to <code>true</code>
      * @return an instance of BoooleanSplit
@@ -47,7 +49,8 @@ public class BooleanSplit extends AbstractSplitter<Boolean> {
      * @param source the String source
      * @return a Boolean converted from a String
      */
-    @Override public Boolean split(String source)  {
+    @Override
+    public Boolean split(String source) {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
         return conversionFunction.apply(result);
     }

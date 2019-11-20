@@ -1,4 +1,4 @@
-package org.pho.splitter.core.splits.features;
+package org.pho.splitter.core.splits.string.features;
 
 import java.util.function.Function;
 
@@ -34,7 +34,8 @@ public enum WordCase implements Function<String, String> {
      * @param source the String source
      * @return the String source converted
      */
-    @Override public String apply(String source) {
+    @Override
+    public String apply(String source) {
         return caseFunction.apply(source);
     }
 }

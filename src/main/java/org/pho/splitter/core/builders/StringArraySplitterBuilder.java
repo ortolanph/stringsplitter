@@ -1,8 +1,8 @@
 package org.pho.splitter.core.builders;
 
-import org.pho.splitter.core.splits.StringArraySplit;
-import org.pho.splitter.core.splits.StringSplit;
-import org.pho.splitter.core.splits.features.WordCase;
+import org.pho.splitter.core.splits.string.StringArraySplit;
+import org.pho.splitter.core.splits.string.StringSplit;
+import org.pho.splitter.core.splits.string.features.WordCase;
 
 /**
  * Builder to create String Array Splitter.
@@ -31,10 +31,10 @@ public final class StringArraySplitterBuilder {
     /**
      * Adds a StringSplit with a start, an end, word cased and trimmed.
      *
-     * @param start where the split begins
-     * @param end where the split ends
+     * @param start    where the split begins
+     * @param end      where the split ends
      * @param wordCase the word case
-     * @param trimmed if it's needed to remove blank spaces
+     * @param trimmed  if it's needed to remove blank spaces
      * @return a builder instance
      */
     public StringArraySplitterBuilder addStringSplit(int start, int end, WordCase wordCase, boolean trimmed) {
@@ -45,8 +45,8 @@ public final class StringArraySplitterBuilder {
     /**
      * Adds a StringSplit with a start, an end, word cased and trimmed.
      *
-     * @param start where the split begins
-     * @param end where the split ends
+     * @param start   where the split begins
+     * @param end     where the split ends
      * @param trimmed if it's needed to remove blank spaces
      * @return a builder instance
      */
@@ -58,8 +58,8 @@ public final class StringArraySplitterBuilder {
     /**
      * Adds a StringSplit with a start, an end, word cased and trimmed.
      *
-     * @param start where the split begins
-     * @param end where the split ends
+     * @param start    where the split begins
+     * @param end      where the split ends
      * @param wordCase the word case
      * @return a builder instance
      */
@@ -72,7 +72,7 @@ public final class StringArraySplitterBuilder {
      * Adds a StringSplit with a start, an end, word cased and trimmed.
      *
      * @param start where the split begins
-     * @param end where the split ends
+     * @param end   where the split ends
      * @return a builder instance
      */
     public StringArraySplitterBuilder addStringSplit(int start, int end) {
@@ -83,9 +83,9 @@ public final class StringArraySplitterBuilder {
     /**
      * Adds a StringSplit with a start, an end, word cased and trimmed.
      *
-     * @param start where the split begins
+     * @param start    where the split begins
      * @param wordCase the word case
-     * @param trimmed if it's needed to remove blank spaces
+     * @param trimmed  if it's needed to remove blank spaces
      * @return a builder instance
      */
     public StringArraySplitterBuilder addStringSplit(int start, WordCase wordCase, boolean trimmed) {
@@ -96,7 +96,7 @@ public final class StringArraySplitterBuilder {
     /**
      * Adds a StringSplit with a start, an end, word cased and trimmed.
      *
-     * @param start where the split begins
+     * @param start    where the split begins
      * @param wordCase the word case
      * @return a builder instance
      */
@@ -108,7 +108,7 @@ public final class StringArraySplitterBuilder {
     /**
      * Adds a StringSplit with a start, an end, word cased and trimmed.
      *
-     * @param start where the split begins
+     * @param start   where the split begins
      * @param trimmed if it's needed to remove blank spaces
      * @return a builder instance
      */
