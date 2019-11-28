@@ -7,6 +7,7 @@ import org.pho.splitter.core.exception.SplitterException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@DisplayName("ByteSplit Test")
 class ByteSplitTest {
 
     private static final String DATA = "  65 -65 127-128BYTE 999";

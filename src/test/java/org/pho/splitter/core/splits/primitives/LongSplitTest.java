@@ -7,6 +7,7 @@ import org.pho.splitter.core.exception.SplitterException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@DisplayName("LongSplit Test")
 class LongSplitTest {
 
     private static final String DATA = "         36854775807        -36854775808 9223372036854775807-9223372036854775808LONG NUMBER INDEED!! 9300000000000000000";

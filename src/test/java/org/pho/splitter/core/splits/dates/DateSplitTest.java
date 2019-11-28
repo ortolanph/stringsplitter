@@ -10,6 +10,7 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("DateSplit Test")
 class DateSplitTest {
 
     private static final String DATA_1 = "14/11/2019 14:24:171573741457000";

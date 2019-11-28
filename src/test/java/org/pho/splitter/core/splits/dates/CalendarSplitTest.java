@@ -11,6 +11,7 @@ import java.util.GregorianCalendar;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("CalendarSplit Test")
 class CalendarSplitTest {
 
     private static final String DATA_1 = "14/11/2019 14:24:171573741457000";

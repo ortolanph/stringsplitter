@@ -7,6 +7,7 @@ import org.pho.splitter.core.exception.SplitterException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@DisplayName("IntegerSplit Test")
 class IntegerSplitTest {
 
     private static final String DATA = "     483647    -483648 2147483647-2147483648    INTEGER 3000000000";
