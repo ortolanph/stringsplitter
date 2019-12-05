@@ -13,7 +13,7 @@ import java.util.Date;
  *
  * @author Paulo Henrique Ortolan
  */
-public class CalendarSplit extends AbstractSplitter<Calendar> {
+public final class CalendarSplit extends AbstractSplitter<Calendar> {
 
     private SimpleDateFormat format;
 
@@ -51,8 +51,8 @@ public class CalendarSplit extends AbstractSplitter<Calendar> {
     /**
      * Adds a String conversion into a Calendar from a long value representing a date.
      *
-     * @param start  where the split starts
-     * @param end    where the split ends
+     * @param start where the split starts
+     * @param end   where the split ends
      * @return an instance of CalendarSplit
      */
     public static CalendarSplit fromLong(int start, int end) {
@@ -62,7 +62,7 @@ public class CalendarSplit extends AbstractSplitter<Calendar> {
     /**
      * Adds a String conversion into a Calendar from a long value representing a date.
      *
-     * @param start  where the split starts
+     * @param start where the split starts
      * @return an instance of CalendarSplit
      */
     public static CalendarSplit fromLong(int start) {
@@ -86,8 +86,8 @@ public class CalendarSplit extends AbstractSplitter<Calendar> {
             splitted = (format == null) ?
                     convertTime(Long.valueOf(result)) :
                     convertString(result);
-        } catch (ParseException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            throw new SplitterException(e.getMessage(), e);
         }
 
         return splitted;

@@ -8,7 +8,7 @@ import org.pho.splitter.core.splits.string.features.WordCase;
  *
  * @author Paulo Henrique Ortolan
  */
-public class StringSplit extends AbstractSplitter<String> {
+public final class StringSplit extends AbstractSplitter<String> {
 
     private WordCase wordCase;
 

@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @author Paulo Henrique Ortolan
  */
-public class LocalDateTimeSplit extends AbstractSplitter<LocalDateTime> {
+public final class LocalDateTimeSplit extends AbstractSplitter<LocalDateTime> {
 
     private DateTimeFormatter format;
 
@@ -21,8 +21,8 @@ public class LocalDateTimeSplit extends AbstractSplitter<LocalDateTime> {
     /**
      * Adds a String conversion into a LocalDateTime.
      *
-     * @param start  where the split starts
-     * @param end    where the split ends
+     * @param start where the split starts
+     * @param end   where the split ends
      * @return an instance of LocalDateSplit
      */
     public static LocalDateTimeSplit newLocalDateTimeSplit(int start, int end) {
@@ -32,7 +32,7 @@ public class LocalDateTimeSplit extends AbstractSplitter<LocalDateTime> {
     /**
      * Adds a String conversion into a LocalDateTime.
      *
-     * @param start  where the split starts
+     * @param start where the split starts
      * @return an instance of LocalDateSplit
      */
     public static LocalDateTimeSplit newLocalDateTimeSplit(int start) {
