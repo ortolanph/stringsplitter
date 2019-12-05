@@ -7,12 +7,12 @@
 
 ## Task list
 
-- [ ] **Float**
+- [x] **Float**
   - [x] Test
   - [x] Implementation
   - [x] Javadoc
   - [x] Package documentation
-  - [ ] Commit changes
+  - [x] Commit changes
 
 - [ ] **Double**
   - [ ] Test
