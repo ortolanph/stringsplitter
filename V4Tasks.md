@@ -14,12 +14,12 @@
   - [x] Package documentation
   - [x] Commit changes
 
-- [ ] **Double**
-  - [ ] Test
-  - [ ] Implementation
-  - [ ] Javadoc
+- [x] **Double**
+  - [x] Test
+  - [x] Implementation
+  - [x] Javadoc
   - [x] Package documentation
-  - [ ] Commit changes
+  - [x] Commit changes
  
 - [ ] **Date Tests**
   - [x] Add `CalendarSpliitTest` the exception test

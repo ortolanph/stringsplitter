@@ -309,9 +309,17 @@ The following table shows the plans to evolve the framework:
 | 2 | StringSplit, StringArraySplit, CharacterSplit, ByteSplit, ShortSplit, IntegerSplit, LongSplit | Implemented | |
 | 3 | LocalDateSplit, LocalTimeSplit, LocalDateTimeSplit, DateSplit and CalendarSplit | Under development | [Tasks](V3Tasks.md) | 
 | 4 | FloatSplit and DoubleSplit | In Development | [Tasks](V4Tasks.md) |
-| 5 | Studies on reflections, EntityBuilder and FieldSplit | To Be Implemented | [Tasks](V5Tasks.md) |
-| 6 | Studies on annotations and annotation processing. Annotations and Annotations Processing | To Be Implemented | [Tasks](V6Tasks.md) |
-| 7 | Maven central plans | To Be Defined | [Tasks](V7Tasks.md) |
+
+## Backlog
+
+[Backlog](backlog.md)
+
+| Release | Feature | Status |
+|:-------:| ------- |:------:|
+| 1 | Code review | Defining |
+| 1 | Studies on reflections, EntityBuilder and FieldSplit | To Be Implemented |
+| 2 | Studies on annotations and annotation processing. Annotations and Annotations Processing | To Be Implemented |
+| 3 | Maven central plans | To Be Defined |
 
 ## Reference
 

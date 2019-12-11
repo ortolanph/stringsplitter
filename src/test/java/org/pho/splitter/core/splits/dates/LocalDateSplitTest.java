@@ -66,6 +66,8 @@ class LocalDateSplitTest {
     @Test
     @DisplayName("Exception test")
     public void shouldThrowException() {
-        assertThrows(SplitterException.class, () -> { LocalDateSplit.newLocalDateSplit(0).split(DATA_1); });
+        assertThrows(SplitterException.class, () -> {
+            LocalDateSplit.newLocalDateSplit(0).split(DATA_1);
+        });
     }
 }
