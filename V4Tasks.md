@@ -28,12 +28,12 @@
   - [x] Add `LocalTimeSpliitTest` the exception test
   - [x] Add `LocalDateTimeSpliitTest` the exception test
 
-- [ ] **Other**
+- [x] **Other**
   - [x] Change version in `pom.xml`
   - [x] Reformat code
   - [x] Code review
   - [x] Update main page
   - [x] Write release notes
-  - [ ] Merge with master
-  - [ ] Create a JAR Release
+  - [x] Merge with master
+  - [x] Create a JAR Release
 
