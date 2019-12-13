@@ -78,6 +78,10 @@ public final class LocalTimeSplit extends AbstractSplitter<LocalTime> {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
         result = removeSpecialCharacters(result);
 
-        return (format == null) ? LocalTime.parse(result) : LocalTime.parse(result, format);
+        try {
+            return (format == null) ? LocalTime.parse(result) : LocalTime.parse(result, format);
+        } catch (Exception e) {
+            throw new SplitterException(e.getMessage(), e);
+        }
     }
 }

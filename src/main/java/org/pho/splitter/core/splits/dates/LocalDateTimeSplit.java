@@ -1,5 +1,6 @@
 package org.pho.splitter.core.splits.dates;
 
+import org.pho.splitter.core.exception.SplitterException;
 import org.pho.splitter.core.splits.AbstractSplitter;
 
 import java.time.LocalDateTime;
@@ -73,10 +74,14 @@ public final class LocalDateTimeSplit extends AbstractSplitter<LocalDateTime> {
      * @return a LocalDateTime instance from a String
      */
     @Override
-    public LocalDateTime split(String source) {
+    public LocalDateTime split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
         result = removeSpecialCharacters(result);
 
-        return (format == null) ? LocalDateTime.parse(result) : LocalDateTime.parse(result, format);
+        try {
+            return (format == null) ? LocalDateTime.parse(result) : LocalDateTime.parse(result, format);
+        } catch (Exception e) {
+            throw new SplitterException(e.getMessage(), e);
+        }
     }
 }

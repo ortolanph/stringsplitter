@@ -48,15 +48,13 @@
  
  ### Task list
  
- - [ ] **Float**
-   - [ ] Test
-   - [ ] Implementation
-   - [ ] Commit changes
- 
- - [ ] **Double**
-   - [ ] Test
-   - [ ] Implementation
-   - [ ] Commit changes
+   - [ ] **Studies**
+     - [ ] Code
+     - [ ] Article
+     
+  - [ ] EntityBuilder
+     - [ ] Builder
+     - [ ] Mechanics
   
   - [ ] **Other**
     - [ ] Reformat code

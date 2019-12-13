@@ -13,6 +13,15 @@ Java 8 or later.
 
 ## Release Notes
 
+### V4
+
+ * Implemented Float splitter
+ * Implemented Double splitter
+ * Implemented exception flow tests on Date classes
+ * Javadoc Documentation and other documentation fixed
+ * Updated Javadoc documentation for packages
+ * Updated this page with date examples
+
 ### V3
 
  * Organized packages into primitives, dates and string
@@ -161,6 +170,26 @@ LongSplit longSplit = LongSplit.newLongSplit(10);
 
 long distanceFromTheSun = longSplit.split(data);
 
+```
+
+#### Splitting Floats
+
+```java
+String data = "2.67DATA"
+
+FloatSplit floatSplit = FloatSplit.newFloatSplit(0, 4);
+
+float price = floatSplit.split(data);
+```
+
+#### Splitting Doubles
+
+```java
+String data = "2.67DATA"
+
+DoubleSplit doubleSplit = DoubleSplit.newDoubleSplit(0, 4);
+
+double price = doubleSplit.split(data);
 ```
 
 ### Dates
