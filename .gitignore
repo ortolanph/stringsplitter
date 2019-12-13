@@ -2,7 +2,6 @@
 
 dist/*
 
-
 ### Java template
 # Compiled class file
 *.class
@@ -75,3 +74,9 @@ fabric.properties
 ## Operating system files
 nohup.out
 .attach_pid**
+
+## Others
+.classpath
+.project
+.settings/**
+.sts4-cache/**
