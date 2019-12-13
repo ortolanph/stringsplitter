@@ -7,25 +7,33 @@
 
 ## Task list
 
-- [ ] **Float**
-  - [ ] Test
-  - [ ] Implementation
-  - [ ] Commit changes
+- [x] **Float**
+  - [x] Test
+  - [x] Implementation
+  - [x] Javadoc
+  - [x] Package documentation
+  - [x] Commit changes
 
-- [ ] **Double**
-  - [ ] Test
-  - [ ] Implementation
-  - [ ] Commit changes
+- [x] **Double**
+  - [x] Test
+  - [x] Implementation
+  - [x] Javadoc
+  - [x] Package documentation
+  - [x] Commit changes
  
- - [ ] **Other**
-   - [ ] Reformat code
-   - [ ] Code review
-   - [ ] Update javadoc documentation
-     - [ ] Float
-     - [ ] Double
-   - [ ] Update pacakge documentation
-     - [ ] `primitives` package
-   - [ ] Update main page
-   - [ ] Write release notes
-   - [ ] Merge with master
-   - [ ] Create a JAR Release
+- [x] **Date Tests**
+  - [x] Add `CalendarSpliitTest` the exception test
+  - [x] Add `DateSpliitTest` the exception test
+  - [x] Add `LocalDateSpliitTest` the exception test
+  - [x] Add `LocalTimeSpliitTest` the exception test
+  - [x] Add `LocalDateTimeSpliitTest` the exception test
+
+- [ ] **Other**
+  - [x] Change version in `pom.xml`
+  - [x] Reformat code
+  - [x] Code review
+  - [x] Update main page
+  - [x] Write release notes
+  - [ ] Merge with master
+  - [ ] Create a JAR Release
+

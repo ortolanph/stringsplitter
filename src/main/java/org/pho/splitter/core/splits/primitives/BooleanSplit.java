@@ -9,7 +9,7 @@ import java.util.function.Function;
  *
  * @author Paulo Henrique Ortolan
  */
-public class BooleanSplit extends AbstractSplitter<Boolean> {
+public final class BooleanSplit extends AbstractSplitter<Boolean> {
 
     private Function<String, Boolean> conversionFunction;
 

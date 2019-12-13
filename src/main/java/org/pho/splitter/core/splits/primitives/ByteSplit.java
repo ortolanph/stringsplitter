@@ -8,7 +8,7 @@ import org.pho.splitter.core.splits.AbstractSplitter;
  *
  * @author Paulo Henrique Ortolan
  */
-public class ByteSplit extends AbstractSplitter<Byte> {
+public final class ByteSplit extends AbstractSplitter<Byte> {
 
     private ByteSplit(int start, int end) {
         super(start, end);

@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  *
  * @author Paulo Henrique Ortolan
  */
-public class StringArraySplit extends AbstractSplitter<List<String>> {
+public final class StringArraySplit extends AbstractSplitter<List<String>> {
 
     private List<StringSplit> splitters;
 

@@ -8,6 +8,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DisplayName("LocalTimeSplit Test")
 class LocalTimeSplitTest {
@@ -49,5 +50,13 @@ class LocalTimeSplitTest {
         LocalTime actual = LocalTimeSplit.fromFormatted(11, OTHER_FORMAT).split(DATA_1);
         LocalTime expected = LocalTime.of(13, 56, 35);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Exception test")
+    public void shouldThrowException() {
+        assertThrows(SplitterException.class, () -> {
+            LocalTimeSplit.newLocalTimeSplit(0).split(DATA_1);
+        });
     }
 }

@@ -9,7 +9,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@DisplayName("DateSplit Test")
 class DateSplitTest {
 
     private static final String DATA_1 = "14/11/2019 14:24:171573741457000";
@@ -33,7 +35,6 @@ class DateSplitTest {
     public void dateSplitFormattedInputAtEnd() throws SplitterException, ParseException {
         Date actual = DateSplit.fromFormatted(13, FORMAT).split(DATA_2);
         Date expected = FORMAT.parse(MY_DATE);
-        System.out.println(expected.getTime());
         assertEquals(expected, actual);
     }
 
@@ -51,5 +52,11 @@ class DateSplitTest {
         Date actual = DateSplit.fromLong(19).split(DATA_1);
         Date expected = FORMAT.parse(MY_DATE);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("DateSplit exception test")
+    public void exceptionTest() {
+        assertThrows(SplitterException.class, () -> DateSplit.fromFormatted(0, FORMAT).split("2000"));
     }
 }

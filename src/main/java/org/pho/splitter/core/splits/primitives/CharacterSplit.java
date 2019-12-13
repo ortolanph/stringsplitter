@@ -7,7 +7,7 @@ import org.pho.splitter.core.splits.AbstractSplitter;
  *
  * @author Paulo Henrique Ortolan
  */
-public class CharacterSplit extends AbstractSplitter<Character> {
+public final class CharacterSplit extends AbstractSplitter<Character> {
 
     private CharacterSplit(int start) {
         super(start, start + 1);

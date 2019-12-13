@@ -8,6 +8,7 @@ import java.util.function.Function;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@DisplayName("BooleanSplit Test")
 class BooleanSplitTest {
 
     private static final String TRUE_FALSE_DATA = "truefalse";

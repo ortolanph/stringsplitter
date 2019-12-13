@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @author Paulo Henrique Ortolan
  */
-public class LocalDateSplit extends AbstractSplitter<LocalDate> {
+public final class LocalDateSplit extends AbstractSplitter<LocalDate> {
 
     private DateTimeFormatter format;
 
@@ -22,8 +22,8 @@ public class LocalDateSplit extends AbstractSplitter<LocalDate> {
     /**
      * Adds a String conversion into a LocalDate.
      *
-     * @param start  where the split starts
-     * @param end    where the split ends
+     * @param start where the split starts
+     * @param end   where the split ends
      * @return an instance of LocalDateSplit
      */
     public static LocalDateSplit newLocalDateSplit(int start, int end) {
@@ -33,7 +33,7 @@ public class LocalDateSplit extends AbstractSplitter<LocalDate> {
     /**
      * Adds a String conversion into a LocalDate.
      *
-     * @param start  where the split starts
+     * @param start where the split starts
      * @return an instance of LocalDateSplit
      */
     public static LocalDateSplit newLocalDateSplit(int start) {
@@ -72,10 +72,15 @@ public class LocalDateSplit extends AbstractSplitter<LocalDate> {
      * @return a LocalDate instance from a String
      */
     @Override
-    public LocalDate split(String source) {
+    public LocalDate split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
         result = removeSpecialCharacters(result);
 
-        return (format == null) ? LocalDate.parse(result) : LocalDate.parse(result, format);
+        try {
+            return (format == null) ? LocalDate.parse(result) : LocalDate.parse(result, format);
+        } catch (Exception e) {
+            throw new SplitterException(e.getMessage(), e);
+        }
+
     }
 }

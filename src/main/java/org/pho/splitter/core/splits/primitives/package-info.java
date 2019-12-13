@@ -28,11 +28,18 @@
  *         <td>LongSplit</td>
  *     </tr>
  *     <tr>
+ *         <td><code>Float</code></td>
+ *         <td>FloatSplit</td>
+ *     </tr>
+ *     <tr>
+ *         <td><code>Double</code></td>
+ *         <td>FloatSplit</td>
+ *     </tr>
+ *     <tr>
  *         <td><code>Boolean</code></td>
  *         <td>BooleanSplit</td>
  *     </tr>
  * </table>
  * <br>
- * The Float and Double are classes that will be developed on the V4 version.
  */
 package org.pho.splitter.core.splits.primitives;

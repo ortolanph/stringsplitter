@@ -10,7 +10,9 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@DisplayName("CalendarSplit Test")
 class CalendarSplitTest {
 
     private static final String DATA_1 = "14/11/2019 14:24:171573741457000";
@@ -49,5 +51,11 @@ class CalendarSplitTest {
         Calendar actual = CalendarSplit.fromLong(19).split(DATA_1);
         Calendar expected = new GregorianCalendar(2019, Calendar.NOVEMBER, 14, 14, 24, 17);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("CalendarSplit exception test")
+    public void exceptionTest() throws SplitterException {
+        assertThrows(SplitterException.class, () -> CalendarSplit.fromFormatted(0, 19, FORMAT).split("ABCDEFGHIJabcdefghij"));
     }
 }

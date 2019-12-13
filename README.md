@@ -13,6 +13,15 @@ Java 8 or later.
 
 ## Release Notes
 
+### V4
+
+ * Implemented Float splitter
+ * Implemented Double splitter
+ * Implemented exception flow tests on Date classes
+ * Javadoc Documentation and other documentation fixed
+ * Updated Javadoc documentation for packages
+ * Updated this page with date examples
+
 ### V3
 
  * Organized packages into primitives, dates and string
@@ -163,6 +172,26 @@ long distanceFromTheSun = longSplit.split(data);
 
 ```
 
+#### Splitting Floats
+
+```java
+String data = "2.67DATA"
+
+FloatSplit floatSplit = FloatSplit.newFloatSplit(0, 4);
+
+float price = floatSplit.split(data);
+```
+
+#### Splitting Doubles
+
+```java
+String data = "2.67DATA"
+
+DoubleSplit doubleSplit = DoubleSplit.newDoubleSplit(0, 4);
+
+double price = doubleSplit.split(data);
+```
+
 ### Dates
 
 #### Date
@@ -309,9 +338,17 @@ The following table shows the plans to evolve the framework:
 | 2 | StringSplit, StringArraySplit, CharacterSplit, ByteSplit, ShortSplit, IntegerSplit, LongSplit | Implemented | |
 | 3 | LocalDateSplit, LocalTimeSplit, LocalDateTimeSplit, DateSplit and CalendarSplit | Under development | [Tasks](V3Tasks.md) | 
 | 4 | FloatSplit and DoubleSplit | In Development | [Tasks](V4Tasks.md) |
-| 5 | Studies on reflections, EntityBuilder and FieldSplit | To Be Implemented | [Tasks](V5Tasks.md) |
-| 6 | Studies on annotations and annotation processing. Annotations and Annotations Processing | To Be Implemented | [Tasks](V6Tasks.md) |
-| 7 | Maven central plans | To Be Defined | [Tasks](V7Tasks.md) |
+
+## Backlog
+
+[Backlog](backlog.md)
+
+| Release | Feature | Status |
+|:-------:| ------- |:------:|
+| 1 | Code review | Defining |
+| 1 | Studies on reflections, EntityBuilder and FieldSplit | To Be Implemented |
+| 2 | Studies on annotations and annotation processing. Annotations and Annotations Processing | To Be Implemented |
+| 3 | Maven central plans | To Be Defined |
 
 ## Reference
 

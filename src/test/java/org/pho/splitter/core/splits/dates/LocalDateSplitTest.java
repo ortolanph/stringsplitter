@@ -12,6 +12,7 @@ import java.time.format.SignStyle;
 import java.time.temporal.ChronoField;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DisplayName("LocalDateSplit Test")
 class LocalDateSplitTest {
@@ -62,4 +63,11 @@ class LocalDateSplitTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("Exception test")
+    public void shouldThrowException() {
+        assertThrows(SplitterException.class, () -> {
+            LocalDateSplit.newLocalDateSplit(0).split(DATA_1);
+        });
+    }
 }

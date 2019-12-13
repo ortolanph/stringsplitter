@@ -7,6 +7,7 @@ import org.pho.splitter.core.exception.SplitterException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@DisplayName("ShortSplit Test")
 class ShortSplitTest {
 
     private static final String DATA = "  1500 -1500 32767-32768SHORT 50000";

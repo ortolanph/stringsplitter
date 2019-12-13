@@ -8,7 +8,7 @@ import org.pho.splitter.core.splits.AbstractSplitter;
  *
  * @author Paulo Henrique Ortolan
  */
-public class LongSplit extends AbstractSplitter<Long> {
+public final class LongSplit extends AbstractSplitter<Long> {
 
     private String[] specialCharacters;
 

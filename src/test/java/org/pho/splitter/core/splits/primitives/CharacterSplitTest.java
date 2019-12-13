@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("CharactgerSplit Test")
 class CharacterSplitTest {
 
     private static final String DATA = "A\u0000\uffff";

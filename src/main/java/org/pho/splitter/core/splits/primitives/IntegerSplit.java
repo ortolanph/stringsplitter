@@ -8,7 +8,7 @@ import org.pho.splitter.core.splits.AbstractSplitter;
  *
  * @author Paulo Henrique Ortolan
  */
-public class IntegerSplit extends AbstractSplitter<Integer> {
+public final class IntegerSplit extends AbstractSplitter<Integer> {
 
     private IntegerSplit(int start, int end, String... specialCharacters) {
         super(start, end, specialCharacters);
