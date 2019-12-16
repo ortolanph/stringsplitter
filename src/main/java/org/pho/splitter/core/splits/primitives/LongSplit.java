@@ -49,7 +49,7 @@ public final class LongSplit extends AbstractSplitter<Long> {
     @Override
     public Long split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
-        result = removeSpecialCharacters(result);
+        result = removeSpecialCharactersAndSplit(result);
 
         try {
             return Long.valueOf(result.trim());

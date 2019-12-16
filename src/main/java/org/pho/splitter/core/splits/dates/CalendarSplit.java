@@ -79,7 +79,7 @@ public final class CalendarSplit extends AbstractSplitter<Calendar> {
     @Override
     public Calendar split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
-        result = removeSpecialCharacters(result);
+        result = removeSpecialCharactersAndSplit(result);
         Calendar splitted = null;
 
         try {

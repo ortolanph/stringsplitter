@@ -76,7 +76,7 @@ public final class LocalDateTimeSplit extends AbstractSplitter<LocalDateTime> {
     @Override
     public LocalDateTime split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
-        result = removeSpecialCharacters(result);
+        result = removeSpecialCharactersAndSplit(result);
 
         try {
             return (format == null) ? LocalDateTime.parse(result) : LocalDateTime.parse(result, format);

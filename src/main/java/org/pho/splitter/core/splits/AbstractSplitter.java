@@ -1,5 +1,6 @@
 package org.pho.splitter.core.splits;
 
+import org.pho.splitter.core.exception.SplitterException;
 import org.pho.splitter.core.function.SplitFunction;
 
 /**
@@ -69,8 +70,8 @@ public abstract class AbstractSplitter<T> implements SplitFunction<T> {
      * @param source the String source
      * @return the String source without the special characters
      */
-    public String removeSpecialCharacters(String source) {
-        String result = source;
+    public String removeSpecialCharactersAndSplit(String source) throws SplitterException {
+        String result = simpleSplit(source);
 
         if (specialCharacters != null) {
             for (String specialCharacter : specialCharacters) {
@@ -80,4 +81,9 @@ public abstract class AbstractSplitter<T> implements SplitFunction<T> {
 
         return result;
     }
+
+    public String simpleSplit(String source) throws SplitterException {
+        return ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
+    }
+
 }

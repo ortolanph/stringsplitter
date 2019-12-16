@@ -49,7 +49,7 @@ public final class ShortSplit extends AbstractSplitter<Short> {
     @Override
     public Short split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
-        result = removeSpecialCharacters(result);
+        result = removeSpecialCharactersAndSplit(result);
 
         try {
             return Short.valueOf(result.trim());

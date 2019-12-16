@@ -47,7 +47,7 @@ public final class IntegerSplit extends AbstractSplitter<Integer> {
     @Override
     public Integer split(String source) throws SplitterException {
         String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
-        result = removeSpecialCharacters(result);
+        result = removeSpecialCharactersAndSplit(result);
 
         try {
             return Integer.valueOf(result.trim());
