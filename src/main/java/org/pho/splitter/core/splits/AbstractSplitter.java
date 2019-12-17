@@ -83,7 +83,11 @@ public abstract class AbstractSplitter<T> implements SplitFunction<T> {
     }
 
     public String simpleSplit(String source) throws SplitterException {
-        return ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
+        try {
+            return ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
+        } catch (Exception exception) {
+            throw new SplitterException(exception.getMessage(), exception);
+        }
     }
 
 }
