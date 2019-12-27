@@ -14,15 +14,15 @@ public abstract class AbstractSplitter<T> implements SplitFunction<T> {
     /**
      * Means to the end of the line.
      */
-    protected static final int END_OF_LINE = 0;
+    protected static final int END_OF_LINE = -1;
 
     private static final String NOTHING = "";
 
-    private String[] specialCharacters;
+    private final String[] specialCharacters;
 
-    private int start;
+    private final int start;
 
-    private int end;
+    private final int end;
 
     /**
      * Creates a new AbstractSplitter.
@@ -56,6 +56,15 @@ public abstract class AbstractSplitter<T> implements SplitFunction<T> {
     }
 
     /**
+     * Returns all the special characters.
+     *
+     * @return the special characters.
+     */
+    public String[] getSpecialCharacters() {
+        return specialCharacters;
+    }
+
+    /**
      * Checks whether the split has an ending point or not.
      *
      * @return <code>true</code> if the split has end and <code>false</code> if not
@@ -71,10 +80,15 @@ public abstract class AbstractSplitter<T> implements SplitFunction<T> {
      * @return the String source without the special characters
      */
     public String removeSpecialCharactersAndSplit(String source) throws SplitterException {
-        String result = simpleSplit(source);
+        String result = "";
+        try {
+            result = simpleSplit(source);
+        } catch (SplitterException exception) {
+            throw new SplitterException(exception.getMessage(), exception);
+        }
 
-        if (specialCharacters != null) {
-            for (String specialCharacter : specialCharacters) {
+        if (getSpecialCharacters() != null) {
+            for (String specialCharacter : getSpecialCharacters()) {
                 result = result.replaceAll(specialCharacter, NOTHING);
             }
         }
