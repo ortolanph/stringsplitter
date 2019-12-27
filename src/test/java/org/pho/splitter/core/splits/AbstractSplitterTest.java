@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Abstract Splitter Test")
 class AbstractSplitterTest {
 
-    private static final String DATA="A@B#C@D&E@FGHIJ";
+    private static final String DATA = "A@B#C@D&E@FGHIJ";
     private static final int END_OF_LINE = -1;
     private static final int START = 0;
     private static final int END = 10;

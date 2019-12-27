@@ -73,8 +73,7 @@ public class DoubleSplit extends AbstractSplitter<Double> {
      */
     @Override
     public Double split(String source) throws SplitterException {
-        String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
-        result = removeSpecialCharactersAndSplit(result);
+        String result = simpleSplit(source);
 
         try {
             return (format == null) ? Double.parseDouble(result.trim()) : format.parse(result.trim()).floatValue();

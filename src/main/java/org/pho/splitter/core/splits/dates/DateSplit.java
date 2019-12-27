@@ -76,8 +76,7 @@ public final class DateSplit extends AbstractSplitter<Date> {
      */
     @Override
     public Date split(String source) throws SplitterException {
-        String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
-        result = removeSpecialCharactersAndSplit(result);
+        String result = simpleSplit(source);
         Date splitted = null;
 
         try {
