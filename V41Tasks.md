@@ -7,19 +7,19 @@
 
 ## Task list
 
-- [ ] **split call**
-  - [ ] Test
-  - [ ] Implementation
-  - [ ] Javadoc
-  - [ ] Refactor classes
-  - [ ] Commit changes
+- [x] **split call**
+  - [x] Test
+  - [x] Implementation
+  - [x] Javadoc
+  - [x] Refactor classes
+  - [x] Commit changes
 
 -  [ ] **Other**
-  - [ ] Change version in `pom.xml`
-  - [ ] Reformat code
-  - [ ] Code review
-  - [ ] Update main page
-  - [ ] Write release notes
-  - [ ] Merge with master
-  - [ ] Create a JAR Release
+   - [x] Change version in `pom.xml`
+   - [x] Reformat code
+   - [x] Code review
+   - [x] Update main page
+   - [x] Write release notes
+   - [ ] Merge with master
+   - [ ] Create a JAR Release
 

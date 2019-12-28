@@ -82,3 +82,4 @@ nohup.out
 .project
 .settings/**
 .sts4-cache/**
+.vscode/**

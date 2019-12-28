@@ -13,6 +13,11 @@ Java 8 or later.
 
 ## Release Notes
 
+### V4.1
+
+ * Modifying the internal splitter mechanism
+ * More unit testing added
+
 ### V4
 
  * Implemented Float splitter
