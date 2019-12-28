@@ -73,8 +73,7 @@ public final class LocalDateSplit extends AbstractSplitter<LocalDate> {
      */
     @Override
     public LocalDate split(String source) throws SplitterException {
-        String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
-        result = removeSpecialCharacters(result);
+        String result = simpleSplit(source);
 
         try {
             return (format == null) ? LocalDate.parse(result) : LocalDate.parse(result, format);

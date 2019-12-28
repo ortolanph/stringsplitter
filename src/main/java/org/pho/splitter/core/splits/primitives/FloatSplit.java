@@ -73,8 +73,7 @@ public class FloatSplit extends AbstractSplitter<Float> {
      */
     @Override
     public Float split(String source) throws SplitterException {
-        String result = ((hasEnd()) ? source.substring(getStart(), getEnd()) : source.substring(getStart())).trim();
-        result = removeSpecialCharacters(result);
+        String result = simpleSplit(source);
 
         try {
             return (format == null) ? Float.parseFloat(result.trim()) : format.parse(result.trim()).floatValue();

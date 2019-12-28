@@ -32,7 +32,7 @@ class CalendarSplitTest {
     @Test
     @DisplayName("Calendar Formatted Input")
     public void calendarSplitFormattedInputAtEnd() throws SplitterException {
-        Calendar actual = CalendarSplit.fromFormatted(13, FORMAT).split(DATA_2);
+        Calendar actual = CalendarSplit.fromFormatted(12, FORMAT).split(DATA_2);
         Calendar expected = new GregorianCalendar(2019, Calendar.NOVEMBER, 14, 14, 24, 17);
         assertEquals(expected, actual);
     }

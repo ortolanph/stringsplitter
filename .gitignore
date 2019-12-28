@@ -75,8 +75,11 @@ fabric.properties
 nohup.out
 .attach_pid**
 
-## Others
+## Other IDEs
+
+
 .classpath
 .project
 .settings/**
 .sts4-cache/**
+.vscode/**
