@@ -363,3 +363,7 @@ The following table shows the plans to evolve the framework:
 
 [Setters, Method Handles, and Java 11
 ](https://dzone.com/articles/setters-method-handles-and-java-11)
+
+[Guide to uploading artifacts to the Central Repository](https://maven.apache.org/repository/guide-central-repository-upload.html)
+
+[How to Publish Your Artifacts to Maven Central](https://dzone.com/articles/publish-your-artifacts-to-maven-central)
