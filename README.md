@@ -344,6 +344,7 @@ The following table shows the plans to evolve the framework:
 | 3 | LocalDateSplit, LocalTimeSplit, LocalDateTimeSplit, DateSplit and CalendarSplit | Implemented | [Tasks](V3Tasks.md) | 
 | 4 | FloatSplit and DoubleSplit | Implemented | [Tasks](V4Tasks.md) |
 | 4.1 | Refactorings, improvements, bugifxing and testing | Implemented | [Tasks](V41Tasks.md) |
+| 5 | EntityBuilder, FieldSplit, Wiki pages (better documentation) and Issues fixing | v5 |
 
 ## Reference
 
