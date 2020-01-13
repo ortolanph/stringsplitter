@@ -21,13 +21,14 @@
    
  - [ ] **Wiki**
    - [ ] Main page
-   - [ ] Release Notes page
+   - [x] Release Notes page
    - [ ] Technical Pages
      - [ ] String and String Array 
      - [ ] Wrappers 
      - [ ] Dates
      - [ ] Entities 
-   - [ ] Next Versions Page
+   - [x] Next Versions Page
+   - [ ] Sidebar
   
   - [ ] **Issues**
     - [ ] [Issue #5](https://github.com/ortolanph/stringsplitter/issues/5)
