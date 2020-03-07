@@ -341,10 +341,10 @@ The following table shows the plans to evolve the framework:
 |:-------:| ------- |:------:|:----------:|
 | 1 | Framework architecture | Implemented | |
 | 2 | StringSplit, StringArraySplit, CharacterSplit, ByteSplit, ShortSplit, IntegerSplit, LongSplit | Implemented | |
-| 3 | LocalDateSplit, LocalTimeSplit, LocalDateTimeSplit, DateSplit and CalendarSplit | Implemented | [Tasks](V3Tasks.md) | 
-| 4 | FloatSplit and DoubleSplit | Implemented | [Tasks](V4Tasks.md) |
-| 4.1 | Refactorings, improvements, bugifxing and testing | Implemented | [Tasks](V41Tasks.md) |
-| 5 | EntityBuilder, FieldSplit, Wiki pages (better documentation) and Issues fixing | [Tasks](V5Tasks.md) |
+| 3 | LocalDateSplit, LocalTimeSplit, LocalDateTimeSplit, DateSplit and CalendarSplit | Implemented | [Tasks](https://github.com/ortolanph/stringsplitter/wiki/V3-Tasks) | 
+| 4 | FloatSplit and DoubleSplit | Implemented | [Tasks](https://github.com/ortolanph/stringsplitter/wiki/4-Tasks) |
+| 4.1 | Refactorings, improvements, bugifxing and testing | Implemented | [Tasks](https://github.com/ortolanph/stringsplitter/wiki/V41-Tasks) |
+| 5 | EntityBuilder, FieldSplit, Wiki pages (better documentation) and Issues fixing | [Tasks](https://github.com/ortolanph/stringsplitter/wiki/V5-Tasks) |
 
 ## Reference
 
